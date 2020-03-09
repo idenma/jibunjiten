@@ -1,0 +1,62 @@
+
+<div class="col-md-12">
+
+
+<div class = "dictionary-top">
+
+
+
+
+
+
+  <% @dictionaries.each do |dictionary| %>
+  <%= link_to("/posts/#{dictionary.id}") do %>
+  <div class="dictionary-single">
+    <div class="dictionary-name">
+      <h6><%= dictionary.name %> </h6>
+    </div>
+  </div>
+  <% end %>
+
+
+
+  <!--
+
+    <div class="icon_button">
+    <%= link_to("/dictionaries/#{dictionary.id}") do %>
+    <p><i class="far fa-edit"> edit</i>
+    <% end %>
+
+    <%= link_to("/dictionaries/#{dictionary.id}", method: :delete,data: { confirm: '消します？' }) do %>
+    <i class="far fa-trash-alt"> delete</i></p>
+    <% end %>
+    </div>
+
+    -->
+
+<% end %>
+    <%= link_to "/dictionaries/new" do  %>
+<div class="dictionary-single">
+  <div class="dictionary-name">
+
+    <h6>new</h6>
+
+  </div>
+</div>
+    <% end %>
+
+
+
+<h4>こんにちは</h4>
+
+
+
+</div>
+
+</div>
+
+<div class="contents">
+<%= render "./posts/display" %>
+
+
+</div>

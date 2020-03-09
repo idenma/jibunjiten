@@ -1,0 +1,40 @@
+<% provide :title, "辞書作成" %>
+<div class="form-base">
+
+<div class="form-heading">
+   <%=form_for @Dictionary, url: dictionaries_create_path do |f|%>
+
+     <h2>辞書作成</h2>
+
+     <p>辞典の名前</p>
+     <p><%=f.text_field :name %></p>
+
+     <p>辞書のスタイル</p>
+     <p><%= f.select :style, [["標準辞書表示", 0], ["コンピュータ用辞書表示", 1]] %></p>
+
+    <%= f.fields_for :posts do |p| %>
+      <p>トップページ　見出し1</p>
+      <p><%= p.text_field :heading %></p>
+      <p>トップページ　見出し2</p>
+      <p><%= p.text_field :subheading %></p>
+</div>
+
+<div class="form-contents">
+<div class="form-textarea">
+      <p>トップページ　本文1</p>
+      <p><%= p.text_area :content_1 %></p>
+</div>
+<div class="form-textarea">
+      <p>トップページ　本文2</p>
+      <p><%=p.text_area :content_2 %></p>
+    <% end %>
+</div>
+</div>
+<div class="form-submit">
+    <p><%= f.submit "辞書作成" %></p>
+</div>
+   <% end %>
+
+
+
+</div>

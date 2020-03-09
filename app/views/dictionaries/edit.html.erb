@@ -1,0 +1,21 @@
+<% provide :title, "辞書更新" %>
+<div class="input-form-base">
+ <div class="input-form-space">
+
+  <div class="input-form">
+   <%=form_for(@Dictionary,url:dictionaries_update_path) do |f|%>
+
+     <h2>辞書 更新</h2>
+
+     <p>辞典の名前</p>
+     <p><%=f.text_field :name %></p>
+
+     <p>辞書のスタイル</p>
+     <p><%= f.select :style, [["標準辞書表示", 0], ["コンピュータ用辞書表示", 1]] %></p>
+
+
+    <p><%= f.submit "辞書 更新" %></p>
+   <% end %>
+  </div>
+ </div>
+</div>

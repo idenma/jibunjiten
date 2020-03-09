@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) %> | じぶん辞典</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+<%= stylesheet_link_tag "book/style0", :media => "all" %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
+
+
+
+
+  </head>
+
+  <body>
+    <!--
+    <% if flash != nil %>
+ <p class="notice"><%= notice %></p>
+ <p class="alert"><%= alert %></p>
+ <% end %>
+ -->
+    <%= yield %>
+
+  </body>
+</html>

@@ -1,0 +1,71 @@
+p {
+
+font-family: 'M PLUS Rounded 1c', sans-serif;
+
+}
+
+.main-table {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction:row;
+
+}
+
+.heading {
+  width:20%;
+  background-color: #eeeeee;
+
+
+}
+
+.main-contents {
+  width:80%;
+  background-color: #dddddd;
+    padding:5px;
+
+}
+
+.display-contents {
+  background-color: #cccccc;
+  flex-direction:column;
+  padding:5px;
+
+
+
+}
+
+.child-contents {
+  background-color: #bbbbbb;
+  display:flex;
+  flex-direction:row;
+    padding:5px;
+}
+
+.short-contents {
+  background-color: #888888;
+  display:flex;
+  flex-direction: column;
+  padding:5px;
+
+
+}
+
+.short-contents-1 {
+  background-color: #999999;
+  display:flex;
+  flex-direction: column;
+  padding:5px;
+
+
+}
+
+.short-contents-2 {
+  background-color: #aaaaaa;
+  display:flex;
+  flex-direction: column;
+
+
+}

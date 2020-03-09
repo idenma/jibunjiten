@@ -1,0 +1,13 @@
+<table border="1">
+<tr>
+  <td>id</td><td>Dic.ID<td><td>Dictionary<td>見出し</td><td>見出し2</td><td>本文1</td><td>本文2</td>
+</tr>
+<% @posts.each do |post|%>
+
+  <tr>
+    <td><%=post.id %></td><td><%= post.Dictionary %><td><td><%=Dictionary.find(post.Dictionary).name %><td><%=post.heading %></td><td><%=post.subheading %></td><td><%=post.content_1 %></td><td><%=post.content_2 %></td>
+  </tr>
+
+
+ <% end %>
+ </table>

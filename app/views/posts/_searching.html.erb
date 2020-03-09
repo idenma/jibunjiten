@@ -1,0 +1,77 @@
+
+
+
+
+<!-- search form    -->
+<% provide(:title, "検索結果:#{params[:search]}",) %>
+<div class="tab_table">
+  <div class="dictionary-top">
+  <div class="dictionary-single">
+    <div class="dictionary-name">
+      <h6>検索結果:<%= params[:search] %></h6>
+    </div>
+  </div>
+  <%= link_to "/" do  %>
+    <div class="dictionary-single">
+      <div class="dictionary-name">
+        <h6>home</h6>
+      </div>
+    </div>
+  <% end %>
+  <div class="search-form">
+     <%= form_tag(search_path,{method: :get}) do %>
+       <%= text_field_tag :search ,'',class: "input-dictionary",placeholder: "検索" %>
+       <%= submit_tag 'Search!',class:"submit" %>
+     <% end %>
+  </div>
+  </div>
+</div>
+
+<div class="display-base">
+
+<!-- display    -->
+
+<div class="head-bar">
+</div>
+
+<div class="col-md-12 main-table">
+  <div class="col-md-2 heading">
+
+
+     <% pastDictionary = 0 %>
+      <table>
+       <%@posts.each do |post| %>
+        <tr>
+              <% if pastDictionary != post.dictionary_id %>
+              <td><p class="title"><%= Dictionary.find_by(id:post.dictionary_id).name %></p></td><%# Dictionaryがあったら表示 %>
+              <% pastDictionary = post.dictionary_id %>
+              <% else %>
+              <td></td><%# Dictionaryが表示されたら空td %>
+              <% end %>
+              <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><p><%= link_to(post.heading.truncate(16),"/posts/search/#{params[:search]}/#{post.id}") %></td>
+        </tr>
+        <% end %>
+      </table>
+
+
+
+    </div>
+
+
+
+
+
+  <% if @post != nil %>
+   <%= render "/posts/main-contents" %>
+ <% else %>
+ 検索結果:なし
+ <% end %>
+</div>
+
+</div><!--main-table-->
+</div><!--display-base-->
+<%= console %>

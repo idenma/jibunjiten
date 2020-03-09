@@ -1,0 +1,71 @@
+<div class="display-hidden">
+  <p><%= Dictionary.find(@Dictionary).style %></p>
+  <% if @posts.where(dictionary_id:@Dictionary).count == 1 %>
+  <% sureDelete = "この辞典の最後の記事ですが削除しますか？"%>
+  <% else %>
+  <% sureDelete = "削除しますか？" %>
+  <% end %>
+</div>
+
+<div class="display-base">
+
+<!-- display    -->
+
+<div class="col-md-12 head-bar">
+</div>
+
+<div class="col-md-12 main-table">
+  <div class="col-md-2 heading">
+
+    <div class="dictionary-top-name">
+
+      <%= link_to(dictionaries_edit_path(@Dictionary)) do %>
+
+      <h5><i class="far fa-edit"></i></h5>
+      <% end %>
+      <h2><span class="medium"><i class="fas fa-book-open"></i></span><%= Dictionary.find(@Dictionary).name %></h2>
+      <%= link_to("/dictionaries/#{@Dictionary}/",method: :delete,data: { confirm: "この辞典を削除しますか？" }) do %>
+
+      <h6><i class="fas fa-times-circle"></i></h6>
+      <% end %>
+
+    </div>
+
+
+
+
+
+    <%@posts.each do |post| %>
+    <p><%= link_to(post.heading.truncate(20),"/posts/#{@Dictionary}/#{post.id}") %></p>
+    <%end%>
+
+    <div class="edit-modal-open">
+      <div class="edit-modal">
+        <div class="edit-modal-bg modal-close">
+          <h1><i class="fas fa-times-circle"></i></h1>
+        </div>
+        <div class="edit-modal-content">
+          <%= render "/posts/new" %>
+        </div>
+      </div>
+
+    <div class="icon_button">
+      <div class="tooltip1">
+        <p><i class="far fa-file-alt"> </i></p>
+       <div class="description1">新規ページ</div>
+     </div>
+
+      </div>
+
+    </div>
+
+
+
+
+  </div>
+
+    <%= render "/posts/main-contents" %>
+  </div>
+
+</div><!--main-table-->
+</div><!--display-base-->

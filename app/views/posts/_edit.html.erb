@@ -1,0 +1,29 @@
+<% if @Dictionary == nil %>
+<% @Dictionary = @post.dictionary_id %>
+<% end%>
+<div class="form-base">
+  <div class="form-heading">
+    <%=form_tag("/posts/#{@Dictionary}/#{@post.id}/update",method: :patch) do %>
+    <h1><%= Dictionary.find(@Dictionary).name %></h1>
+    <p>見だし１</p>
+    <p><input class="input" type="text" name="heading" value="<%= @post.heading%>"></p>
+    <p>見だし２</p>
+    <p><input class="input" type="text" name="subheading" value="<%= @post.subheading %>"></p>
+  </div>
+  <div class="form-contents">
+    <input type="hidden" name="Dictionary" value="<%="#{@Dictionary}" %>" >
+    <input type="hidden" name="id" value="<%="#{@post.id}" %>" >
+    <div class="form-textarea">
+      <p>本文１</p>
+      <p><textarea name="content_1"><%= @post.content_1.gsub(/(\r\n|\r|\n)/, "\n")  %></textarea></p>
+    </div>
+    <div class="form-textarea">
+      <p>本文２</p>
+      <p><textarea name="content_2"><%= @post.content_2.gsub(/(\r\n|\r|\n)/, "\n")  %></textarea></p>
+    </div>
+  </div>
+  <div class="form-submit">
+    <input type="submit" value="ok">
+  </div>
+  <% end %>
+</div>
