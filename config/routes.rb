@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get "/posts/search/:search/:id",  to: "posts#search_show", as: 'search_show'
 
   #home
+  get "/",                         to: 'home#index' 
   root to: "home#index",            as: 'home'
   get '/posts/:dictionary_id/',     to: 'home#dictionaryshow'
 
