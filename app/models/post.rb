@@ -12,7 +12,7 @@ def self.search(search,p)
        where user_id = ? AND "+ content +" Like ? ORDER BY dictionaries.id ASC",p,"%#{search}%"]
      )
   end
-   all_post.flatten!.uniq!.sort_by{|x|x.dictionary_id}
+   all_post.flatten.uniq.sort_by{|x|x.dictionary_id}
   end
 end
 
