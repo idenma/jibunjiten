@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get "/posts/search/:search/:id",  to: "posts#search_show", as: 'search_show'
 
   #home
-  get "/",                         to: 'home#index' 
+  get "/",                         to: 'home#index'
   root to: "home#index",            as: 'home'
   get '/posts/:dictionary_id/',     to: 'home#dictionaryshow'
 
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
 
   #dictionaries
-  get "/posts/:dictionary_id/new",          to: "posts#new"
+  get "/posts/:dictionary_id/new",          to: "posts#new",as: 'posts_new'
   get "/posts/:dictionary_id/:id/",         to: "home#show", as: 'posts_show'
 	get "/posts/:dictionary_id/:id/edit",     to: "posts#edit"
   post "/posts/create",                     to: "posts#create"
