@@ -9,15 +9,15 @@ class HomeController < ApplicationController
          params[:dictionary_id] = @dictionaries.last.id                         #最後の辞書を選択
          params[:id] = Post.last.id                                             #最後の記事を表示
          @Dictionary = params[:dictionary_id]                                   #表示する辞書はparams内在の指定辞書
-         @posts = Post.where(dictionary_id: @Dictionary)                            #辞書に紐づいた記事を集める
-         @post = Post.where(dictionary_id: @Dictionary).last                        #表示される記事は最後の記事
+         @posts = Post.where(dictionary_id: @Dictionary)                        #辞書に紐づいた記事を集める
+         @post = Post.where(dictionary_id: @Dictionary).last                    #表示される記事は最後の記事
        end
    end
  end
 
  def dictionaryshow
-   @dictionaries = Dictionary.where(user_id:current_user.id)                   #user_idに紐づいたDictionaryを集める->ビュー表示
-   @Dictionary = params[:dictionary_id]                                        #表示する辞書はparams内在の指定辞書
+   @dictionaries = Dictionary.where(user_id:current_user.id)                    #user_idに紐づいたDictionaryを集める->ビュー表示
+   @Dictionary = params[:dictionary_id]                                         #表示する辞書はparams内在の指定辞書
    @posts = Post.where(dictionary_id: @Dictionary)                                 #辞書に紐づいた記事を集める
    @post = @posts.last
  end

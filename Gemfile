@@ -14,6 +14,8 @@ gem 'jquery-rails'
 gem 'hirb'
 gem 'hirb-unicode'
 
+gem 'devise-i18n'   #deviseを日本語にする
+gem 'devise-i18n-views'   #上のgemを通す際必要
 
 gem 'bootstrap-sass', '3.3.7'
 
