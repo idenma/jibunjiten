@@ -20,7 +20,7 @@ gem 'devise-i18n-views'   #上のgemを通す際必要
 gem 'bootstrap-sass', '3.3.7'
 
 
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 3.12'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
