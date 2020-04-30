@@ -18,14 +18,14 @@ class HomeController < ApplicationController
  def dictionaryshow
    @dictionaries = Dictionary.where(user_id:current_user.id)                    #user_idに紐づいたDictionaryを集める->ビュー表示
    @Dictionary = params[:dictionary_id]                                         #表示する辞書はparams内在の指定辞書
-   @posts = Post.where(dictionary_id: @Dictionary)                                 #辞書に紐づいた記事を集める
+   @posts = Post.where(dictionary_id: @Dictionary).order("id ASC")                                  #辞書に紐づいた記事を集める
    @post = @posts.last
  end
 
   def show
     @dictionaries = Dictionary.where(user_id:current_user.id)                   #user_idに紐づいたDictionaryを集める->ビュー表示
     @Dictionary = params[:dictionary_id]                                        #表示する辞書はparams内在の指定辞書
-    @posts = Post.where(dictionary_id: @Dictionary)                                 #辞書に紐づいた記事を集める
+    @posts = Post.where(dictionary_id: @Dictionary).order("id ASC")                                  #辞書に紐づいた記事を集める
     @post = @posts.find(params[:id])
   end
 
