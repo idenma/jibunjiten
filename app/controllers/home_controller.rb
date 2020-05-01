@@ -4,7 +4,7 @@ class HomeController < ApplicationController
 
   def index
    if current_user && User.find(current_user.id).dictionaries.last != nil       #current_userが存在し、かつ辞書がある場合（上記直後 or  よく来るユーザー）
-     @dictionaries = Dictionary.where(user_id:current_user.id)                  #user_idに紐づいたDictionaryを集める->ビュー表示
+     dictionary_collect
        if params[:dictionary_id] == nil && params[:id] == nil                   #もしログイン後初表示だった場合
          params[:dictionary_id] = @dictionaries.last.id                         #最後の辞書を選択
          params[:id] = Post.last.id                                             #最後の記事を表示
@@ -15,13 +15,13 @@ class HomeController < ApplicationController
  end
 
  def dictionaryshow
-   @dictionaries = Dictionary.where(user_id:current_user.id)                    #user_idに紐づいたDictionaryを集める->ビュー表示
+   dictionary_collect
    post_read                      									         #辞書に紐づいた記事を集める
    @post = @posts.last
  end
 
   def show
-    @dictionaries = Dictionary.where(user_id:current_user.id)                   #user_idに紐づいたDictionaryを集める->ビュー表示
+    dictionary_collect
     post_read                          										    #辞書に紐づいた記事を集める
     @post = @posts.find(params[:id])
   end
@@ -42,6 +42,10 @@ class HomeController < ApplicationController
    def post_read
     @Dictionary = params[:dictionary_id]                                   #表示する辞書はparams内在の指定辞書
     @posts = Post.where(dictionary_id: @Dictionary).order("id ASC") 
+   end
+   
+   def dictionary_collect
+     @dictionaries = Dictionary.where(user_id:current_user.id)                    #user_idに紐づいたDictionaryを集める->ビュー表示
    end
 
 end
