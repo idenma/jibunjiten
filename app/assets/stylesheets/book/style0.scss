@@ -63,6 +63,13 @@ h1, h2, h3, h4, h5, h6 {
    flex-wrap:nowrap;
    justify-content:flex-start;
  }
+ 
+ .right-text {
+	 border:solid 1px;
+	 p {
+		 text-align:right;
+	 }
+ }
  .air_content {}
 
 
