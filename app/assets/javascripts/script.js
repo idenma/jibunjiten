@@ -25,7 +25,7 @@ $(function(){
       $('.dictionary-single').eq(i).css('background-color','#dddde4');
     } else
     if (tagStyle[i] == "0"){
-      $('.dictionary-single').eq(i).css('background-color','#d8e698');
+      $('.dictionary-single').eq(i).css('background-color','#caafaf');
     } else {
       $('.dictionary-single').eq(i).css('background-color','#b0c4de');
     }
