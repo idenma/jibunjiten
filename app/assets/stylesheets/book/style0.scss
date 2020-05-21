@@ -67,14 +67,16 @@ h1, h2, h3, h4, h5, h6 {
  }
 
  .right-text {
-	 border:solid 1px;
+
 	 p {
-		 text-align:right;
+		 text-align:left;
 	 }
  }
  .air_content {}
 
+.content-pack {
 
+}
 
 
 
@@ -348,24 +350,27 @@ h1, h2, h3, h4, h5, h6 {
    position:absolute;
    top:0px;
    text-align: center;
-   width:10px;
+   width:20px;
    height:800px;
-   background-color:$main;
+   background-color:white;
  }
 
  .main-table {
    position:relative;
     display: flex;
     height:800px;
+    background-color: #eeeeee;
+    border-radius:0px 0px 20px 20px;
     flex-wrap:nowrap;
   }
 
   .heading {
     display:flex;
     width:400px;
+    background-color: #eeeeee;
     flex-flow: column nowrap;
     text-align:left;
-    padding:20px 10px 0px 10px;
+    border-radius:20px;
     p {
       //padding-top:5px;
       font-family: 'Hack','Osaka-Mono';
@@ -381,7 +386,7 @@ h1, h2, h3, h4, h5, h6 {
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    margin-bottom:10px;
+    margin:10px 0px 10px 0px;
     i {
       color:$accent;
       padding-right:5px;

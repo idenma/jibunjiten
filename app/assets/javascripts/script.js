@@ -61,8 +61,8 @@ $(function(){
 
 
 
-
-
+  var contentWidth = $('.content-pack').innerWidth() ;//+  $('.child_content_2').innerWidth();
+  $('.right-text').width(contentWidth);
 
 
 
@@ -106,3 +106,7 @@ $('.flash').fadeOut(3000);
 $('.dictionaries_new_modal').find('.edit-modal').fadeIn();
 
  });
+
+ $(window).load(function(){
+
+});
