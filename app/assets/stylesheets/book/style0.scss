@@ -88,6 +88,7 @@ h1, h2, h3, h4, h5, h6 {
 //_display
 .display-base {
 
+
 }
 
 .hidden {
@@ -149,7 +150,8 @@ h1, h2, h3, h4, h5, h6 {
 
  .head-bar {
    text-align: center;
-   width:100%;
+   margin-left: 20px;
+   width:95%;
    height:10px;
    background-color:$main;
  }
@@ -164,13 +166,15 @@ h1, h2, h3, h4, h5, h6 {
  }
 
  .main-table {
+   margin:0px 20px 0px 20px;
   background-color: $base;
   background-image: $main;
   -webkit-background-size: 10px;
   position:relative;
   display: flex;
+  width: 95%;
   height:800px;
-  border-radius: 0px 0px 40px 40px;
+  border-radius: 20px 20px 20px 20px;
   flex-wrap:nowrap;
 }
 
@@ -340,8 +344,9 @@ h1, h2, h3, h4, h5, h6 {
  }
 
  .head-bar {
+   margin-left: 20px;
    text-align: center;
-   width:100%;
+   width:95%;
    height:10px;
    background-color:$main;
  }
@@ -358,9 +363,10 @@ h1, h2, h3, h4, h5, h6 {
  .main-table {
    position:relative;
     display: flex;
+    width: 95%;
     height:800px;
     background-color: #eeeeee;
-    border-radius:0px 0px 20px 20px;
+    border-radius:20px 20px 20px 20px;
     flex-wrap:nowrap;
   }
 

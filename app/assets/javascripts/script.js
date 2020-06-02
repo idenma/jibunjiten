@@ -61,8 +61,6 @@ $(function(){
 
 
 
-  var contentWidth = $('.content-pack').innerWidth() ;//+  $('.child_content_2').innerWidth();
-  $('.right-text').width(contentWidth);
 
 
 
