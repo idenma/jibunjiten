@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_10_043217) do
+ActiveRecord::Schema.define(version: 2020_06_05_012722) do
 
   create_table "dictionaries", force: :cascade do |t|
     t.string "name"
@@ -19,6 +19,16 @@ ActiveRecord::Schema.define(version: 2020_02_10_043217) do
     t.integer "style"
     t.integer "user_id"
     t.index ["user_id"], name: "index_dictionaries_on_user_id"
+  end
+
+  create_table "microposts", force: :cascade do |t|
+    t.string "subheading"
+    t.text "content_1"
+    t.text "content_2"
+    t.integer "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_microposts_on_post_id"
   end
 
   create_table "posts", force: :cascade do |t|

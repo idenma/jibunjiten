@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
  belongs_to:Dictionary,optional: true
+ has_many :microposts, dependent: :destroy
  validates :heading,presence:true
 
 def self.search(search,p)
