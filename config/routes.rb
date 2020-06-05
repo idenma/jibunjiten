@@ -36,5 +36,15 @@ Rails.application.routes.draw do
   patch "/dictionaries/:id/update", to: "dictionaries#update", as: 'dictionaries_update'
 	delete "/dictionaries/:id/",      to: "dictionaries#destroy"
 
+  #ここにmicropostを置きたい
+  #postに続く数字や要素が入る
+  #必要なのはnew,create,edit,update,destroy
+
+  # get "/micropost/:dictionary_id/:post_id/new" ,         to: "micropost#new",    as: 'microposts_new'
+  # post "/micropost/:dictionary_id/:post_id/create",      to: "micropost#create", as: 'microposts_create'
+  # get  '/micropost/:dictionary_id/:post_id/:id/,         to: "micropost#edit",   as: 'microposts_edit'
+  # patch "/micropost/:dictionary_id/:post_id/:id/,        to: "micropost#update", as: 'microposts_update'
+  # delete "/micropost/:dictionary_id/:post_id/:id/",      to: "micropost#destroy" as: 'microposts_destroy'
+
 
 end
