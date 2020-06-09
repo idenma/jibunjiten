@@ -2,6 +2,12 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   #pending "add some examples to (or delete) #{__FILE__}"
+
+
+
+
+
+
   let(:user){User.create(params)}
   let(:params){{name:"idenma",email:"idenma2@gmail.com",password:"tamaco"}}
 
@@ -19,6 +25,9 @@ RSpec.describe Post, type: :model do
     post.save
     expect(post).to_not be_valid
   end
+
+
+
 
 
 end

@@ -174,7 +174,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   width: 95%;
   height:800px;
-  border-radius: 20px 20px 20px 20px;
+  border-radius: 0px 0px 20px 20px;
   flex-wrap:nowrap;
 }
 
@@ -361,12 +361,13 @@ h1, h2, h3, h4, h5, h6 {
  }
 
  .main-table {
+   margin:0px 20px 0px 20px;
    position:relative;
     display: flex;
     width: 95%;
     height:800px;
     background-color: #eeeeee;
-    border-radius:20px 20px 20px 20px;
+    border-radius:0px 0px 20px 20px;
     flex-wrap:nowrap;
   }
 

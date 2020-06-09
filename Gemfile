@@ -53,6 +53,7 @@ group :development, :test do
   # Use Puma as the app server
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.6' #RSpecのgem
+  gem 'factory_girl_rails' #Rspecのテストデータ作製に便利
 end
 
 group :development do
