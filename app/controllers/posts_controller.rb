@@ -6,6 +6,7 @@ class PostsController < ApplicationController
     @post = Post.where(Dictionary:@Dictionary).last
 
 
+
   end
 
 
