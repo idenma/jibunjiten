@@ -1,6 +1,7 @@
 class MicropostsController < ApplicationController
 
  def new
+   
  end
 
  def create
@@ -15,5 +16,5 @@ class MicropostsController < ApplicationController
  def destroy
  end
 
- 
+
 end

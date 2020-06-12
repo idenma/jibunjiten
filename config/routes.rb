@@ -5,7 +5,7 @@ Rails.application.routes.draw do
  :sessions => 'users/sessions'
 }
 
-  #get '/sql', to: "posts#sql", as: 'sql'
+
 
   #search
   get "/posts/search",              to: "posts#search", as: 'search'
@@ -18,8 +18,8 @@ Rails.application.routes.draw do
 
 
 
-
-  #dictionaries
+  #posts
+  get "/posts/",                            to: "home#index"
   get "/posts/:dictionary_id/new",          to: "posts#new",as: 'posts_new'
   get "/posts/:dictionary_id/:id/",         to: "home#show", as: 'posts_show'
 	get "/posts/:dictionary_id/:id/edit",     to: "posts#edit"
@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   delete "/posts/:dictionary_id/:id",       to: "posts#destroy"
 
 
-  #posts
+  #dictionaries
  	get "/dictionaries",              to: "dictionaries#list"
   get "/dictionaries/new" ,         to: "dictionaries#new"
   post "/dictionaries/create",      to: "dictionaries#create"

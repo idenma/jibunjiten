@@ -11,11 +11,8 @@ class HomeController < ApplicationController
          post_read             											                        		#辞書に紐づいた記事を集める
          @post = Post.where(dictionary_id: @Dictionary).last                    #表示される記事は最後の記事
 
-         @microposts = false
-         if @post.microposts.count > 0 #このpostにmicropostが存在するなら
-           @microposts = true
-         end
-         
+        microposts_call                                                         #micropostを呼び出し
+
        end
    end
  end
@@ -52,6 +49,14 @@ class HomeController < ApplicationController
 
    def dictionary_collect
      @dictionaries = Dictionary.where(user_id:current_user.id)                    #user_idに紐づいたDictionaryを集める->ビュー表示
+   end
+
+   def microposts_call
+     @microposts = false
+
+     if @post.microposts.count > 0 #このpostにmicropostが存在するなら
+       @microposts = true
+     end
    end
 
 end

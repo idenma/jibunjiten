@@ -18,10 +18,10 @@ class DictionariesController < ApplicationController
 
  def new
    if current_user
-   @Dictionary = Dictionary.new
-   @Dictionary.posts.build
+     @Dictionary = Dictionary.new
+     @Dictionary.posts.build
    render "/dictionaries/new"
- end
+   end
  end
 
  def  create
@@ -32,9 +32,6 @@ class DictionariesController < ApplicationController
    end
  end
 
-
- def show
- end
 
  def edit
     @Dictionary = Dictionary.find_by(id: params[:id])

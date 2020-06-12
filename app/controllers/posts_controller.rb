@@ -1,24 +1,5 @@
 class PostsController < ApplicationController
 
-  def index
-    @Dictionary = params[:dictionary_id]
-    @posts = Post.where(Dictionary:@Dictionary)
-    @post = Post.where(Dictionary:@Dictionary).last
-
-
-
-  end
-
-
-
-  def firstCreate
-    @Dictionary = params[:dictionary_id]
-  @post = Post.create(id:1,heading:"Welcome railsmemo!",subheading:"first",content_1:"first",content_2:"first",dictionary_id: @Dictionary)
-  end
-
-
-
-
   def search
     if current_user
       p = current_user.id
@@ -96,14 +77,6 @@ class PostsController < ApplicationController
      redirect_to(posts_show_path(posts.dictionary_id, posts.id))
     end
   end
-
-
-
-
-  def sql
-   @posts = Post.all
-  end
-
 
 
   private
