@@ -161,19 +161,20 @@ h1, h2, h3, h4, h5, h6 {
    top:0px;
    text-align: center;
    width:20px;
-   height:800px;
+   height:100%;
    background-color:#ffffff;
  }
 
  .main-table {
    margin:0px 20px 0px 20px;
+   padding:0px 0px 20px 0px;
   background-color: $base;
   background-image: $main;
   -webkit-background-size: 10px;
   position:relative;
   display: flex;
   width: 95%;
-  height:800px;
+  height:100%;
   border-radius: 0px 0px 20px 20px;
   flex-wrap:nowrap;
 }
@@ -356,16 +357,17 @@ h1, h2, h3, h4, h5, h6 {
    top:0px;
    text-align: center;
    width:20px;
-   height:800px;
+   height:100%;
    background-color:white;
  }
 
  .main-table {
    margin:0px 20px 0px 20px;
+   padding:0px 0px 20px 0px;
    position:relative;
     display: flex;
     width: 95%;
-    height:800px;
+    height:100%;
     background-color: #eeeeee;
     border-radius:0px 0px 20px 20px;
     flex-wrap:nowrap;

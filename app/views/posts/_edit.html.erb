@@ -15,11 +15,11 @@
     <input type="hidden" name="id" value="<%="#{@post.id}" %>" >
     <div class="form-textarea">
       <p>本文１</p>
-      <p><textarea name="content_1"><%= @post.content_1.gsub(/(\r\n|\r|\n)/, "\n")  %></textarea></p>
+      <textarea name="content_1"><%= @post.content_1.gsub(/(\r\n|\r|\n)/, "\n")  %></textarea>
     </div>
     <div class="form-textarea">
       <p>本文２</p>
-      <p><textarea name="content_2"><%= @post.content_2.gsub(/(\r\n|\r|\n)/, "\n")  %></textarea></p>
+      <textarea name="content_2"><%= @post.content_2.gsub(/(\r\n|\r|\n)/, "\n")  %></textarea>
     </div>
   </div>
   <div class="form-submit">

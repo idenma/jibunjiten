@@ -14,7 +14,7 @@
         <div class="heading-h1">
           <h1><span class="medium"><i class="fas fa-check-square"></i></span><%=@post.heading %></h1>
         </div>
-        <% if @post.subheading.blank?%>
+        <% if @post.subheading.blank? %>
         <h2><%= " 　"%></h2>
         <% else%>
         <h2><%=@post.subheading %></h2>
@@ -23,33 +23,12 @@
     </div>
 
     <div class="content-pack">
-    <div class="row-content">
-      <%if @post.content_1.blank? %>
-      <div class="air_content">
-      </div>
-      <% else %>
-      <div class="child_content_1">
-        <p><%=simple_format((@post.content_1).gsub(/ /,"&ensp;")) %></p>
-      </div>
-      <% end %>
-      <%if @post.content_2.blank? %>
-      <div class="air_content">
-      </div>
-      <% else %>
-      <div class="child_content_2">
-        <p><%=simple_format((@post.content_2).gsub(/ /,"&ensp;")) %></p>
-      </div>
-      <% end %>
-    </div>
+      <%= render "/posts/content-pack" %>
+	  </div><!--content-pack-->
 
-	  <div class="right-text">
-	    <p><%= l @post.updated_at %></p>
+    <div class="row-content"><!--Adjustment　icon-->
 
-	</div>
-	</div><!--content-pack-->
-
-    <div class="row-content">
-      <div class="edit-modal-open">
+      <div class="edit-modal-open"><!--update-->
         <div class="edit-modal">
           <div class="edit-modal-bg modal-close">
             <h1><i class="fas fa-times-circle"></i></h1>
@@ -59,27 +38,57 @@
             <%= render "/posts/edit" %>
           </div>
         </div>
+
       <div class="icon_button">
         <div class="tooltip1">
           <p><i class="far fa-edit"> </i></p>
          <div class="description1">更新 </div>
        </div>
-
-
         </div>
 
-      </div>
-      <div class="icon_button">
+      </div><!--update-->
+
+
+      <div class="icon_button"><!--delete-->
         <%= link_to("/posts/#{@Dictionary}/#{@post.id}/",method: :delete,data: { confirm: "削除しますか？" })do %>
         <div class="tooltip1">
           <p><i class="far fa-trash-alt"> </i></p>
          <div class="description1">削除</div>
        </div>
-
         <% end %>
-      </div>
-    </div>
+      </div><!--delete-->
 
+
+
+      <div class="edit-modal-open"><!--add to　micropost-->
+        <div class="edit-modal">
+          <div class="edit-modal-bg modal-close">
+            <h1><i class="fas fa-times-circle"></i></h1>
+
+          </div>
+          <div class="edit-modal-content">
+            <%= render "/microposts/new" %>
+          </div>
+        </div>
+
+      <div class="icon_button">
+        <div class="tooltip1">
+          <p><i class="fas fa-arrow-down"> </i></p>
+         <div class="description1">テキスト追加</div>
+       </div>
+        </div>
+
+      </div><!--add to　micropost-->
+
+
+
+
+
+    </div><!--Adjustment　icon-->
+
+    <% if @post.microposts.count > 0 %>
+      <%= render "/microposts/micropost_display"%><!--micropost-->
+    <% end %>
   </div><!--content-ziplock-->
 
 

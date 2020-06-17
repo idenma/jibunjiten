@@ -20,7 +20,10 @@ class PostsController < ApplicationController
 
   def show
     @posts = Post.where(dictionary_id: @Dictionary)
-    @post = Post.find_by(id:params[:id])
+     @post = @posts.last
+
+    microposts_call
+
   end
 
   def new
@@ -85,6 +88,12 @@ class PostsController < ApplicationController
     params.permit(:heading,:subheading,:content_1,:content_2,:dictionary_id)
   end
 
+  def microposts_call
+    @microposts = false
 
+    if Micropost.where(post_id: @post.id).present? #このpostにmicropostが存在するなら
+      @microposts = true#Micropost.where(post_id: @post.id)
+    end
+  end
 
 end

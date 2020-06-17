@@ -1,0 +1,23 @@
+<div class="row-content">
+  <%if @post.content_1.blank? %>
+  <div class="air_content">
+  </div>
+  <% else %>
+  <div class="child_content_1">
+    <p><%=simple_format((@post.content_1).gsub(/ /,"&ensp;")) %></p>
+  </div>
+  <% end %>
+  <%if @post.content_2.blank? %>
+  <div class="air_content">
+  </div>
+  <% else %>
+  <div class="child_content_2">
+    <p><%=simple_format((@post.content_2).gsub(/ /,"&ensp;")) %></p>
+  </div>
+  <% end %>
+</div>
+
+<div class="right-text">
+  <p><%= l @post.updated_at %></p>
+
+</div>

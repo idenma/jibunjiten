@@ -21,12 +21,14 @@ class HomeController < ApplicationController
    dictionary_collect
    post_read                      									         #辞書に紐づいた記事を集める
    @post = @posts.last
+   microposts_call
  end
 
   def show
     dictionary_collect
     post_read                          										    #辞書に紐づいた記事を集める
     @post = @posts.find(params[:id])
+    microposts_call 
   end
 
 
@@ -55,7 +57,7 @@ class HomeController < ApplicationController
      @microposts = false
 
      if @post.microposts.count > 0 #このpostにmicropostが存在するなら
-       @microposts = true
+       @microposts = Micropost.where(post_id: params[:id])
      end
    end
 
