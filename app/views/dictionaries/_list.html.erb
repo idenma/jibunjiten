@@ -32,7 +32,7 @@
       <div class="col-md-11 dictionary-space">
 
      <% @dictionaries.each do |dictionary| %><%# dictionaryタグを作る%>
-      <%= link_to("/posts/#{dictionary.id}") do %>
+      <%= link_to("/home/#{dictionary.id}") do %>
         <div class="dictionary-single">
 <h5><%= dictionary.style %></h5>
           <div class="dictionary-name">

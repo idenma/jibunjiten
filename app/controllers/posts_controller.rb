@@ -19,11 +19,10 @@ class PostsController < ApplicationController
 
 
   def show
-    @posts = Post.where(dictionary_id: @Dictionary)
-     @post = @posts.last
-
+    dictionary_collect
+    post_read
+    @post = Post.find_by(id: params[:id])
     microposts_call
-
   end
 
   def new
@@ -47,13 +46,9 @@ class PostsController < ApplicationController
   def update
    @Dictionary = params[:dictionary_id]
    @post = Post.find_by(id: params[:id])
-   @post.heading = params[:heading]
-   @post.subheading = params[:subheading]
-   @post.content_1= params[:content_1]
-   @post.content_2 = params[:content_2]
-   @post.dictionary_id= params[:dictionary_id]
-   @post.save
-   redirect_to(posts_show_path(@Dictionary, @post.id))
+   @post.update(post_params)
+   redirect_to(posts_show_path(params[:dictionary_id],params[:id]))
+
   end
 
 
@@ -77,7 +72,7 @@ class PostsController < ApplicationController
    end
    else
      posts = Post.where(dictionary_id: @Dictionary).last
-     redirect_to(posts_show_path(posts.dictionary_id, posts.id))
+     redirect_to(posts_show_path(params[:dictionary_id],params[:id]))
     end
   end
 
@@ -88,11 +83,20 @@ class PostsController < ApplicationController
     params.permit(:heading,:subheading,:content_1,:content_2,:dictionary_id)
   end
 
-  def microposts_call
-    @microposts = false
+  def post_read
+   @Dictionary = params[:dictionary_id]                                   #表示する辞書はparams内在の指定辞書
+   @posts = Post.where(dictionary_id: @Dictionary).order("id ASC")
+  end
 
-    if Micropost.where(post_id: @post.id).present? #このpostにmicropostが存在するなら
-      @microposts = true#Micropost.where(post_id: @post.id)
+  def dictionary_collect
+    @dictionaries = Dictionary.where(user_id:current_user.id)                    #user_idに紐づいたDictionaryを集める->ビュー表示
+  end
+
+  def microposts_call
+    if params[:id] == nil#このpostにmicropostが存在するなら
+       @microposts = false
+    else
+      @microposts = Micropost.where(post_id: @post.id)
     end
   end
 

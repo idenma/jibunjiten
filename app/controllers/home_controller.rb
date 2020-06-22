@@ -10,9 +10,7 @@ class HomeController < ApplicationController
          params[:id] = Post.last.id                                             #最後の記事を表示
          post_read             											                        		#辞書に紐づいた記事を集める
          @post = Post.where(dictionary_id: @Dictionary).last                    #表示される記事は最後の記事
-
         microposts_call                                                         #micropostを呼び出し
-
        end
    end
  end
@@ -28,7 +26,7 @@ class HomeController < ApplicationController
     dictionary_collect
     post_read                          										    #辞書に紐づいた記事を集める
     @post = @posts.find(params[:id])
-    microposts_call 
+    microposts_call
   end
 
 
@@ -54,10 +52,10 @@ class HomeController < ApplicationController
    end
 
    def microposts_call
-     @microposts = false
-
-     if @post.microposts.count > 0 #このpostにmicropostが存在するなら
-       @microposts = Micropost.where(post_id: params[:id])
+     if params[:id] == nil#このpostにmicropostが存在するなら
+        @microposts = false
+     else
+       @microposts = Micropost.where(post_id: @post.id)
      end
    end
 

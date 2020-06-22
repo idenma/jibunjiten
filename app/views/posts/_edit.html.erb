@@ -3,7 +3,7 @@
 <% end%>
 <div class="form-base">
   <div class="form-heading">
-    <%=form_tag("/posts/#{@Dictionary}/#{@post.id}/update",method: :patch) do %>
+    <%=form_tag("/posts/#{@Dictionary}/#{@post.id}/",method: :patch) do %>
     <h1><%= Dictionary.find(@Dictionary).name %></h1>
     <p>見だし１</p>
     <p><input class="input" type="text" name="heading" value="<%= @post.heading%>"></p>

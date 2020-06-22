@@ -49,7 +49,7 @@
         <div class="form-base"><!--edit micropostをlayerで渡せないのでこれで保留-->
 
         <div class="form-heading">
-        <p><%=form_tag("/microposts/#{@Dictionary}/#{@post.id}/#{micropost.id}/update",method: :patch) do %></p>
+        <p><%=form_tag("/microposts/#{@Dictionary}/#{@post.id}/#{micropost.id}/",method: :patch) do %></p>
 
         <h1><%= @post.heading %></h1>
 
