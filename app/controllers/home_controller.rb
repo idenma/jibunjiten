@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
   before_action :current_user?,only:[:index]
+  before_action :dictionary_collect,only:[:dictionaryshow,:show]
+
 
 
   def index
@@ -9,24 +11,22 @@ class HomeController < ApplicationController
          params[:dictionary_id] = @dictionaries.last.id                         #最後の辞書を選択
          params[:id] = Post.last.id                                             #最後の記事を表示
          post_read             											                        		#辞書に紐づいた記事を集める
-         @post = Post.where(dictionary_id: @Dictionary).last                    #表示される記事は最後の記事
-        microposts_call                                                         #micropostを呼び出し
+         @post = Post.where(dictionary_id: @Dictionary).last
+         @microposts =  Micropost.where(post_id: @post.id)                #表示される記事は最後の記事
        end
    end
  end
 
  def dictionaryshow
-   dictionary_collect
    post_read                      									         #辞書に紐づいた記事を集める
    @post = @posts.last
-   microposts_call
+   @microposts =  Micropost.where(post_id: @post.id)
  end
 
   def show
-    dictionary_collect
     post_read                          										    #辞書に紐づいた記事を集める
     @post = @posts.find(params[:id])
-    microposts_call
+    @microposts =  Micropost.where(post_id: @post.id)
   end
 
 
@@ -52,11 +52,9 @@ class HomeController < ApplicationController
    end
 
    def microposts_call
-     if params[:id] == nil#このpostにmicropostが存在するなら
-        @microposts = false
-     else
-       @microposts = Micropost.where(post_id: @post.id)
-     end
+
+       @microposts =  Micropost.where(post_id: @post.id)
+
    end
 
 end
