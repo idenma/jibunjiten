@@ -37,7 +37,7 @@ $(function(){
   $('.dictionary-single').hover(
     function(){
 
- $(this).animate({
+  $(this).animate({
    top:"20px",
    height:"40px"
    },100);
@@ -54,11 +54,20 @@ $(function(){
     });
 
 //  ログイン情報の表示
-　$('.dictionary-heading').click(function(){
+ $('.dictionary-heading').click(function(){
     $(this).find('.menu-bar').animate({'left':'0px'},100);
 
   });
 
+//  postのiconを表示
+  $('.icon-hanger').hover(
+    function(){
+      $('.icon-hanger-open').slideDown(100);
+    },
+    function(){
+      $('.icon-hanger-open').slideUp(100);
+    }
+  );
 
 
 

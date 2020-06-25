@@ -72,7 +72,7 @@ class PostsController < ApplicationController
    end
    else
      posts = Post.where(dictionary_id: @Dictionary).last
-     redirect_to(posts_show_path(params[:dictionary_id],params[:id]))
+     redirect_to(posts_show_path(params[:dictionary_id],posts.id))
     end
   end
 
