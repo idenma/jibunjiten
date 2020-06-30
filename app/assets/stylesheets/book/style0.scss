@@ -148,6 +148,24 @@ h1, h2, h3, h4, h5, h6 {
   }
  }
 
+ .icon_button-ellipsis {
+   cursor: pointer;
+   display: inline-block;
+   width:40px;
+   height:20px;
+   margin-top:5px;
+   //padding-top:10px;
+   border-radius: 20px;
+   font-weight:normal;
+   align-items: center;
+   background-color:$accent;
+   text-align:center;
+  p {
+    font-size: 1.2em;
+    display: inline-block;
+  }
+ }
+
  .head-bar {
    text-align: center;
    margin-left: 20px;
@@ -344,6 +362,8 @@ h1, h2, h3, h4, h5, h6 {
   }
  }
 
+
+
  .head-bar {
    margin-left: 20px;
    text-align: center;
@@ -495,6 +515,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .icon-hanger {
   position:relative;
+
 }
 
 .icon-hanger-open {

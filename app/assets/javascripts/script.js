@@ -62,10 +62,10 @@ $(function(){
 //  postのiconを表示
   $('.icon-hanger').hover(
     function(){
-      $('.icon-hanger-open').slideDown(100);
+      $(this).find('.icon-hanger-open').show();
     },
     function(){
-      $('.icon-hanger-open').slideUp(100);
+      $(this).find('.icon-hanger-open').hide();
     }
   );
 

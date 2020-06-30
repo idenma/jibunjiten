@@ -29,12 +29,21 @@
   <% end %>
 </div>
 
+<!--micropost内容ここまで-->
+
+
 <div class="right-text">
   <p><%= l micropost.updated_at %></p>
-
 </div>
+<!--updated内容ここまで-->
 
 
+
+<div class="icon-hanger">
+  <div class="icon_button">
+    <p><i class="fas fa-ellipsis-h"></i></p>
+
+<div class="icon-hanger-open">
 <div class="row-content"><!--Adjustment　icon-->
 
   <div class="edit-modal-open"><!--update-->
@@ -134,4 +143,7 @@
     </div>
   </div><!--add to　micropost-->
 </div><!--Adjustment　icon-->
+</div><!--icon-hanger-open-->
+</div><!--icon-button-->
+</div><!--icon-hanger-->
 <% end %>
