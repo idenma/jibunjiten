@@ -1,5 +1,11 @@
 $(function(){
 
+
+  $('.dictionary-top').offset({top: 0,left: 0});
+
+
+
+
 //  タブを並べる
  var tag = $('.hidden').find('h4').text();
  var  choiseTag = 0;
@@ -31,11 +37,14 @@ $(function(){
     }
   }
 
+    $('.head-bar').offset({top: dictionarySingleTop + 30,left: 0});
+
 
 
 //  タブを飛び上がらせる
   $('.dictionary-single').hover(
     function(){
+
 
   $(this).animate({
    top:"20px",
@@ -69,6 +78,64 @@ $(function(){
     }
   );
 
+//　メニュー
+
+var $menu = $('.menu');
+var menuClick = false;
+
+$menu.offset({
+  top: -40,
+  left:0
+ });
+
+ $menu.find('h6').click(function(){
+   if (menuClick == false) {
+     $menu.offset({
+       top: 0
+     });
+     menuClick = true;
+   } else {
+     $menu.offset({
+       top: -40,
+       left: 0
+     });
+     menuClick = false
+   }
+  });
+
+
+//　検索フィールド
+$(window).on('load resize', function() {
+  var windowWidth = window.innerWidth;
+  var $searchForm = $('.search-form');
+  var searchFormleft =  windowWidth -120;
+  var searchFormClick = false;
+
+  $searchForm.offset({
+    top: -30,
+    left:searchFormleft
+  });
+
+
+
+  $searchForm.find('h6').click(function(){
+    if (searchFormClick == false) {
+      $searchForm.offset({
+        top: 0
+      });
+      searchFormClick = true;
+    } else {
+      $searchForm.offset({
+        top: -30,
+        left:searchFormleft
+      });
+      searchFormClick = false
+    }
+   });
+
+});
+　
+
 
 
 
@@ -86,6 +153,8 @@ var style = $('.display-hidden').find('p').text();
 
 
 $('.head-bar').offset({top:dictionarySingleTop + 30});
+
+//$('.display-base').offset({top:dictionarySingleTop + 40});
 
 
 

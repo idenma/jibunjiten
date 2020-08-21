@@ -2,46 +2,54 @@
   <h4><%= Dictionary.find_by(id:@Dictionary).name %></h4>
 <% provide(:title, Dictionary.find_by(id:@Dictionary).name) %>
 </div>
-<div class="col-md-12 tab_table">
+<div class="col-md-12 tab-table">
   <% if flash[:success] %>
   <div class="flash">
   <%= flash[:success] %>
   </div>
   <% end %>
-    <div class="col-md-11 dictionary-top">
-
-      <div class="col-md-11 dictionary-heading">
-        <% if user_signed_in? %>
-        <h5><%= current_user.name %> | ログイン</h5>
-        <% end %>
-
-        <h3><i class="fas fa-book"></i>じぶんじてん</h3>
-        <h6>メニュー</h6>
-     <div class="menu-bar">
-       <% if user_signed_in? %>
-       <p><%= link_to "設定", edit_user_registration_path, method: :get %></p>
-       <p><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></p>
-       <% elsif !user_signed_in? %>
-       <%= link_to "ログイン", new_user_session_path %>
-       <% end %>
-     </div>
+</div><%# tab_table exit%>
+  <div class="menu">
+    <% if user_signed_in? %>
+    <p><%= link_to "設定", edit_user_registration_path, method: :get %></p>
+    <p><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></p>
+    <% elsif !user_signed_in? %>
+    <p><%= link_to "ログイン", new_user_session_path %></p>
+    <% end %>
+    <%# if user_signed_in? %>
+    <!-- h5><%= current_user.name %> | ログイン</h5 -->
+    <%# end %>
+    <h6><i class="fas fa-book"></i>じぶんじてんメニュー</h6>
+  </div><%# menu exit%>
 
 
+  <div class="search-form">
+    <%= form_tag(search_path,{method: :get}) do %>
+      <%= text_field_tag :search ,'',class: "input-dictionary",placeholder: "検索" %>
+      <h6>サーチ！</h6>
+    <% end %>
+  </div><%# search-form exit%>
 
-      </div>
-      <div class="col-md-11 dictionary-space">
 
+
+
+    <div class="col-md-12 dictionary-top">
+<%#----------------------------------------------%>
+
+
+      <div class="col-md-12 dictionary-space">
+<%#----------------------------------------------%>
      <% @dictionaries.each do |dictionary| %><%# dictionaryタグを作る%>
       <%= link_to("/home/#{dictionary.id}") do %>
         <div class="dictionary-single">
-<h5><%= dictionary.style %></h5>
+        <h5><%= dictionary.style %></h5>
           <div class="dictionary-name">
             <h6><%= dictionary.name %></h6>
           </div>
         </div>
       <% end %>
      <% end %><%# dictionaryタグここまで%>
-
+<%#----------------------------------------------%>
      <%= link_to"/dictionaries/new" do  %><%# newタグを作る%>
        <div class="dictionary-single">
          <div class="dictionary-name">
@@ -49,20 +57,6 @@
          </div>
        </div>
      <% end %><%# newタグここまで%>
-
-
+<%#----------------------------------------------%>
    </div><%# dictionary-space exit%>
-   <div class="col-md-0 dictionary-space2">
-  </div><%# dictionary-space2 exit%>
-    </div><%# dictionary-top exit%>
-
-
-    <div class="col-md-1 app-top">
-      <div class="search-form">
-        <%= form_tag(search_path,{method: :get}) do %>
-          <%= text_field_tag :search ,'',class: "input-dictionary",placeholder: "検索" %>
-          <%= submit_tag 'Search!',class:"submit" %>
-        <% end %>
-      </div><%# search-form exit%>
-    </div><%# app-top exit%>
-</div><%# tab_table exit%>
+  </div><%# dictionary-top exit%>
