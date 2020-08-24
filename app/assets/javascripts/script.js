@@ -88,7 +88,7 @@ $menu.offset({
   left:0
  });
 
- $menu.find('h6').click(function(){
+ $menu.find('p').click(function(){
    if (menuClick == false) {
      $menu.offset({
        top: 0
@@ -104,13 +104,15 @@ $menu.offset({
   });
 
 
-//　検索フィールド
+//　ブラウザリサイズに影響するもの
 $(window).on('load resize', function() {
   var windowWidth = window.innerWidth;
   var $searchForm = $('.search-form');
   var searchFormleft =  windowWidth -120;
   var searchFormClick = false;
 
+
+//　検索フィールド
   $searchForm.offset({
     top: -30,
     left:searchFormleft
@@ -118,7 +120,7 @@ $(window).on('load resize', function() {
 
 
 
-  $searchForm.find('h6').click(function(){
+  $searchForm.find('p').click(function(){
     if (searchFormClick == false) {
       $searchForm.offset({
         top: 0
@@ -133,7 +135,7 @@ $(window).on('load resize', function() {
     }
    });
 
-});
+});//　ブラウザリサイズに影響するもの終わり
 　
 
 
