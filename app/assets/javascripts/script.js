@@ -152,9 +152,9 @@ var style = $('.display-hidden').find('p').text();
  $('.display-base').addClass('base-style');
 
 
-$('.head-bar').offset({top:dictionarySingleTop + 30});
+$('.head-bar').offset({top:dictionarySingleTop + 50});
 
-//$('.display-base').offset({top:dictionarySingleTop + 40});
+$('.display-base').offset({top:dictionarySingleTop + 30});
 
 
 
