@@ -16,7 +16,7 @@
   </div>
   <% else %>
   <div class="child_content_1">
-    <p><%=simple_format((micropost.content_1).gsub(/ /,"&ensp;")) %></p>
+    <%= markdown(micropost.content_1).html_safe %>
   </div>
   <% end %>
   <%if micropost.content_2.blank? %>
@@ -24,7 +24,7 @@
   </div>
   <% else %>
   <div class="child_content_2">
-    <p><%=simple_format((micropost.content_2).gsub(/ /,"&ensp;")) %></p>
+    <%= markdown(micropost.content_2).html_safe %>
   </div>
   <% end %>
 </div>
