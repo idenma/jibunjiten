@@ -4,7 +4,12 @@
   </div>
   <% else %>
   <div class="child_content_1">
-    <p><%=simple_format((@post.content_1).gsub(/ /,"&ensp;")) %></p>
+    <!-- p><%= simple_format((@post.content_1).gsub(/ /,"&ensp;")) %></p -->
+
+<%= markdown(@post.content_1).html_safe %>
+
+
+
   </div>
   <% end %>
   <%if @post.content_2.blank? %>
@@ -12,7 +17,8 @@
   </div>
   <% else %>
   <div class="child_content_2">
-    <p><%=simple_format((@post.content_2).gsub(/ /,"&ensp;")) %></p>
+    <!-- p><%=simple_format((@post.content_2).gsub(/ /,"&ensp;")) %></p -->
+    <%= markdown(@post.content_2).html_safe %>
   </div>
   <% end %>
 </div>

@@ -7,7 +7,7 @@ $(function(){
 
 
 //  タブを並べる
- var tag = $('.hidden').find('h4').text();
+ var tag = $('.hidden').find('h4').text();//@Dictionaryを読み込む：選択している辞書
  var  choiseTag = 0;
  var tabNumber = $('.dictionary-single').length;
  var dictionarySingleTop = $('.dictionary-single').offset().top;

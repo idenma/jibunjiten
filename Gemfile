@@ -5,6 +5,10 @@ ruby '2.6.6'
 
 gem 'devise'
 
+#マークダウンするためのgem
+gem 'redcarpet', '~> 2.3.0'
+gem 'coderay'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
