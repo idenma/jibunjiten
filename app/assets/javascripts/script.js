@@ -72,11 +72,11 @@ $(function(){
   $('.icon-hanger').hover(
     function(){
       $(this).find('.icon-hanger-open').show();
-    },
-    function(){
-      $(this).find('.icon-hanger-open').hide();
-    }
-  );
+    }//,
+  //  function(){
+  //    $(this).find('.icon-hanger-open').hide();
+  //  }
+);//フォームからマウスが外れるとフォームが消えるバグあり
 
 //　メニュー
 
