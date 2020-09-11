@@ -25,7 +25,7 @@ $(function(){
   $('.icon-hanger').hover(
     function(){
       $(this).find('.icon-hanger-open').show();
-    },
+    }
   //  function(){
   //    $(this).find('.icon-hanger-open').fadeOut(200);
   //  }hideするとモーダルが消えるバグあり
