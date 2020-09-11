@@ -1,6 +1,22 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/*
+ z-indexについて
+ .display-base: 0;
+ .main-table: 0;
+ .dictionary-top: 0;
+ .menu:1;
+ .flash: 2;
+ .head-bar: 2;
+ .body-bar:2;
+
+
+ .edit-modal:5;
+ .edit-modal-content: 6;
+ */
+
+
 
 
 @font-face{
@@ -908,6 +924,7 @@ input {
     left: 0%;
     top: 0%;
     width: 100%;
+      z-index:4;
 
     h1 {
       color:white;
@@ -969,7 +986,7 @@ input {
 
 .edit-modal-content {
   display:flex;
-
+  z-index: 6;
   background: #fff;
   left: 50%;
   padding: 0px;
