@@ -4,17 +4,17 @@
 /*
  z-indexについて
  .display-base: 0;
- .main-table: 0;
+ .main-table: 2;
  .dictionary-top: 0;
  .menu:0;
  .flash: 2;
- .head-bar: 1;
+ .head-bar: 3;
  .body-bar:0;
 
-.edit-modal-open:0;
-edit-modal-bg:1;
+.edit-modal-open:1;
+edit-modal-bg:4;
  .edit-modal:0;
- .edit-modal-content: 0;
+ .edit-modal-content: 6;
  .icon_button: 0;
  .icon-hanger: 0;
  */
@@ -73,6 +73,7 @@ h1, h2, h3, h4, h5, h6 {
  // main
  .main-contents{
    flex-direction:column;
+   z-index: 0;
  }
 
  .content-ziplock {
@@ -84,6 +85,7 @@ h1, h2, h3, h4, h5, h6 {
    flex-direction:column;
  display:flex;
    flex-wrap:nowrap;
+   z-index: 0;
  }
 
  .row-content {
@@ -91,6 +93,7 @@ h1, h2, h3, h4, h5, h6 {
    display:flex;
    flex-wrap:nowrap;
    justify-content:flex-start;
+   z-index: 0;
  }
 
  .right-text {
@@ -206,7 +209,7 @@ h1, h2, h3, h4, h5, h6 {
  }
 
  .head-bar {
-   z-index: 1;
+   z-index: 3;
    text-align: center;
    width:100%;
    height:10px;
@@ -224,7 +227,7 @@ h1, h2, h3, h4, h5, h6 {
  }
 
  .main-table {
-   z-index: 0;
+   z-index: 2;
 
   background-color: $base;
   background-image: $main;
@@ -415,7 +418,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
  .head-bar {
-   z-index: 1;
+   z-index: 3;
    text-align: center;
    width:100%;
    height:10px;
@@ -433,7 +436,7 @@ h1, h2, h3, h4, h5, h6 {
  }
 
  .main-table {
-   z-index: 0;
+   z-index: 2;
 
     display: flex;
     width: 100%;
@@ -912,7 +915,7 @@ input {
 }
 
 .edit-modal-open {
-    z-index: 0;
+    z-index: 1;
 }
 
 // edit-modal
@@ -933,7 +936,7 @@ input {
     left: 0%;
     top: 0%;
     width: 100%;
-      z-index:1;
+      z-index:4;
 
     h1 {
       color:white;
@@ -965,6 +968,7 @@ input {
     left: 0%;
     top: 0%;
     width: 100%;
+    z-index: 4;
 
     h1 {
       letter-spacing: 5px;
@@ -995,7 +999,7 @@ input {
 
 .edit-modal-content {
   display:flex;
-  z-index: 0;
+  z-index: 6;
   background: #fff;
   left: 50%;
   padding: 0px;
