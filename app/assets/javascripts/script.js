@@ -9,7 +9,7 @@ $(function(){
 //ブラウザの幅が全タブの幅を超えた時に
 //下の段に押しやる　
 
-
+  var dictionarySingleTop = 0;
 
 
 
@@ -25,11 +25,11 @@ $(function(){
   $('.icon-hanger').hover(
     function(){
       $(this).find('.icon-hanger-open').show();
-    }//,
+    },
   //  function(){
-  //    $(this).find('.icon-hanger-open').hide();
-  //  }
-);//フォームからマウスが外れるとフォームが消えるバグあり
+  //    $(this).find('.icon-hanger-open').fadeOut(200);
+  //  }hideするとモーダルが消えるバグあり
+);
 
 //　メニュー
 
@@ -96,7 +96,7 @@ $(window).on('load resize', function() {
     var tag = $('.hidden').find('h4').text();//@Dictionaryを読み込む：選択している辞書
     var  choiseTag = 0;//選択しているタグ（辞書）用変数:初期化
     var tabNumber = $('.dictionary-single').length;//タブの数を数える
-    var dictionarySingleTop = $('.dictionary-single').offset().top;//タブの縦位置を取得
+    dictionarySingleTop = $('.dictionary-single').offset().top;//タブの縦位置を取得
     var dictionarySingleLeft = $('.dictionary-single').offset().left;//タブの横位置を取得
     var choiseTagDepth = new Array(tabNumber);//タブの数だけ
     var tagStyle = new Array(tabNumber);//タグのスタイル取得用変数
@@ -179,8 +179,9 @@ var style = $('.display-hidden').find('p').text();
 
 
 $('.head-bar').offset({top:dictionarySingleTop + 50});
-
 $('.display-base').offset({top:dictionarySingleTop + 30});
+$('.main-table').offset({top:dictionarySingleTop + 60});
+
 
 
 
@@ -208,7 +209,3 @@ $('.flash').fadeOut(3000);
 $('.dictionaries_new_modal').find('.edit-modal').fadeIn();
 
  });
-
- $(window).load(function(){
-
-});
