@@ -294,6 +294,11 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.content-ziplock {
+
+  border-bottom:solid 5px $main;
+}
+
 .show_heading {
 .heading-h1 {
   border-bottom: solid 5px $main;
@@ -499,6 +504,15 @@ h1, h2, h3, h4, h5, h6 {
       padding:5px;
     }
   }
+
+  .content-ziplock {
+
+    border-bottom:solid 5px $main;
+  }
+
+.micropost-content {
+  border-bottom:solid 5px $main;
+}
 
   .show_heading {
   .heading-h1 {

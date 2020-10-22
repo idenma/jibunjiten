@@ -1,5 +1,6 @@
 
 <% @microposts.each do |micropost| %>
+<div class="micropost-content">
 <div class="col-content">
   <div class="show_heading">
     <% if micropost.subheading.blank?%>
@@ -27,6 +28,7 @@
     <%= markdown(micropost.content_2).html_safe %>
   </div>
   <% end %>
+</div>
 </div>
 
 <!--micropost内容ここまで-->
