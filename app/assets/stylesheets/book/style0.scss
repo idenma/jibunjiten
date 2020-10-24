@@ -146,6 +146,8 @@ h1, h2, h3, h4, h5, h6 {
   background-color:#ffcc99;
 }
 //----------------------------------------------------------------------------------------------------------------------------------------
+
+/*
 .style-1 {//一般辞典
 
   $base:#f7f3e8;
@@ -209,6 +211,7 @@ h1, h2, h3, h4, h5, h6 {
  }
 
  .head-bar {
+   display:none;
    z-index: 3;
    text-align: center;
    width:100%;
@@ -301,7 +304,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .show_heading {
 .heading-h1 {
-  border-bottom: solid 5px $main;
+  //border-bottom: solid 5px $main;
   display:flex;
 }
   h1 {
@@ -372,9 +375,9 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-}//一般辞典
+}//一般辞典  */
 //----------------------------------------------------------------------------------------------------------------------------------------
-.style-2 {//コンピュータ辞典
+//.style-2 {//コンピュータ辞典
 
   $base:rgba(255,255,255,1);
   $main: #dddddd;
@@ -423,6 +426,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
  .head-bar {
+   display:none;
    z-index: 3;
    text-align: center;
    width:100%;
@@ -484,7 +488,7 @@ h1, h2, h3, h4, h5, h6 {
       font-family: 'Hack','Osaka-Mono';
       white-space: nowrap;
       font-weight:bold;
-      border-bottom: 5px solid $main;
+//      border-bottom: 5px solid $main;
       padding:10px;
 
 
@@ -507,16 +511,18 @@ h1, h2, h3, h4, h5, h6 {
 
   .content-ziplock {
 
-    border-bottom:solid 5px $main;
+    border-left:solid 5px $main;
+    margin-bottom: 100px;
   }
 
 .micropost-content {
-  border-bottom:solid 5px $main;
+  border-left:solid 5px $main;
+  margin-bottom: 100px;
 }
 
   .show_heading {
   .heading-h1 {
-    border-bottom: solid 5px $main;
+    //border-bottom: solid 5px $main;
     display:flex;
   }
     h1 {
@@ -541,7 +547,7 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: -1px;
     text-align: left;
     padding:5px 40px 5px 0px;
-    border-bottom: solid 5px $main;
+    //border-bottom: solid 5px $main;
     display:inline-block;
     }
   }
@@ -601,7 +607,7 @@ h1, h2, h3, h4, h5, h6 {
       }
     }
   }
-}//コンピュータ辞典
+//}//コンピュータ辞典
 //----------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -634,7 +640,7 @@ h1, h2, h3, h4, h5, h6 {
   padding:10px;
   }
   h6 {
-    font-size: 10px;
+    font-size: 12px;
   }
   h5 {
     font-size: 10px;

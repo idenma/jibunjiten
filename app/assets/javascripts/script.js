@@ -89,7 +89,6 @@ $(window).on('load resize', function() {
    });
 
 
-
 //
    //  タブを並べる
     var rowTag = 0;//タグの列初期化
@@ -110,9 +109,9 @@ $(window).on('load resize', function() {
      var lineUpTag = $('.dictionary-single').eq(i).find('h6').text();//
       tagStyle[i] = $('.dictionary-single').eq(i).find('h5').text();//タグのスタイル取得用変数
      if ( lineUpTag == tag) {//タグが選ばれたタグなら（選択中の辞書なら）
-         choiseTag += 10;//タグの位置　+10下に　（タグが押し込まれてるように表示）
+         //choiseTag += 10;//タグの位置　+10下に　（タグが押し込まれてるように表示）
        }else {//選択されてないタグは
-         choiseTag = 0;//タグの位置　デフォルト
+        // choiseTag = 0;//タグの位置　デフォルト
        }
        choiseTagDepth[i] = dictionarySingleTop + choiseTag;//
       $('.dictionary-single').eq(i).offset({top: choiseTagDepth[i],left: dictionarySingleLeft + (i * 155)});//タグを並べている確信のコード
@@ -135,20 +134,24 @@ $(window).on('load resize', function() {
          $('.dictionary-single').hover(
            function(){
 
+             $(this).css("border","solid 1px black");
 
-         $(this).animate({
-          top:"20px",
-          height:"40px"
-          },100);
+
+         //$(this).animate({
+        //  top:"20px",
+        //  height:"40px"
+        //  },100);
          },
            function(){
 
-             var dictionarySingleEq = $('.dictionary-single').index($(this));
-             var choiseTagHeight = choiseTagDepth[dictionarySingleEq];
-             $(this).animate({
-               top:choiseTagHeight,
-               height:"30px"
-               },100);
+             $(this).css("border","solid 0px");
+
+          //   var dictionarySingleEq = $('.dictionary-single').index($(this));
+          //   var choiseTagHeight = choiseTagDepth[dictionarySingleEq];
+          //   $(this).animate({
+          //     top:choiseTagHeight,
+          //     height:"30px"
+          //     },100);
 
            });
 
@@ -166,14 +169,13 @@ $(window).on('load resize', function() {
 
 
 
-
 var style = $('.display-hidden').find('p').text();
 
- if (style == 0){
+ /* if (style == 0){
    $('.display-base').removeClass('style-2').addClass('style-1');
  } else {
    $('.display-base ').removeClass('style-1').addClass('style-2');
- }
+ } */
 
  $('.display-base').addClass('base-style');
 
