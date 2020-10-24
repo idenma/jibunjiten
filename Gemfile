@@ -23,6 +23,7 @@ gem 'devise-i18n-views'   #上のgemを通す際必要
 
 gem 'bootstrap-sass', '3.4.1'
 
+gem "actionview", ">= 5.2.4.4"
 
 gem 'puma', '3.12.6'
 # Use SCSS for stylesheets
