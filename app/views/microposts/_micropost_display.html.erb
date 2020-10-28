@@ -28,15 +28,16 @@
     <%= markdown(micropost.content_2).html_safe %>
   </div>
   <% end %>
+
+  <div class="right-text">
+    <p><%= l micropost.updated_at %></p>
+  </div>
 </div>
 
 
 <!--micropost内容ここまで-->
 
 
-<div class="right-text">
-  <p><%= l micropost.updated_at %></p>
-</div>
 <!--updated内容ここまで-->
 
 

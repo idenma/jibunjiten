@@ -20,7 +20,10 @@ edit-modal-bg:4;
  */
 
 
-
+ $base:rgba(255,255,255,1);
+ $main: #dddddd;
+ $accent:#ffdc00;
+ $sub: #4b5366;
 
 @font-face{
   font-family: 'Hack';
@@ -97,9 +100,14 @@ h1, h2, h3, h4, h5, h6 {
  }
 
  .right-text {
+   display:flex;
+   flex-direction: column;
+   align-items:flex-end;
 
 	 p {
+     display:flex;
 		 text-align:left;
+     color:$main;
 	 }
  }
  .air_content {}
@@ -143,10 +151,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color:#ffcc99;
 }
 
-  $base:rgba(255,255,255,1);
-  $main: #dddddd;
-  $accent:#ffdc00;
-  $sub: #4b5366;
+
 
   @font-face{
     font-family:'Hack';
@@ -176,14 +181,14 @@ h1, h2, h3, h4, h5, h6 {
    border-radius: 0px;
    font-weight:normal;
    align-items: center;
-   background-color:$sub;
+   background-color:$main;
    text-align:center;
   p {
     font-size: 1.2em;
     display: inline-block;
   }
   i {
-    color:$accent;
+    color:$sub;
   }
  }
 
@@ -299,7 +304,7 @@ h1, h2, h3, h4, h5, h6 {
     text-align: left;
 
     i {
-      color:$accent;
+      color:$sub;
       padding-right:5px;
     }
     }
@@ -390,16 +395,10 @@ h1, h2, h3, h4, h5, h6 {
 // list
 
 .dictionary-name {
-  p {
-  width:100%;
-  color:#fff;
-  font-weight:bold;
-  font-size: 1em;
-  text-align: center;
-  padding:10px;
-  }
+
   h6 {
     font-size: 12px;
+    color:black;
   }
   h5 {
     font-size: 10px;

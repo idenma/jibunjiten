@@ -125,7 +125,7 @@ $(window).on('load resize', function() {
        //  タブを飛び上がらせる
          $('.dictionary-single').hover(
            function(){
-             $(this).css("background-color","red");
+             $(this).find('h6').css("color","red");
          },
            function(){
             // if (tagStyle[i] == "1"){//タグのスタイルが１だった場合
@@ -137,7 +137,7 @@ $(window).on('load resize', function() {
             //     $(this).css('background-color','#b0c4de');//
             //   }
 
-             $(this).css("background-color","#dddddd");
+                       $(this).find('h6').css("color","black");
            });
 
 
