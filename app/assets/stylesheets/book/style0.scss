@@ -118,9 +118,6 @@ h1, h2, h3, h4, h5, h6 {
 //_display
 .display-base {
   z-index: 0;
-//  border: 1px solid blue;
-
-
 }
 
 .hidden {
@@ -145,239 +142,6 @@ h1, h2, h3, h4, h5, h6 {
   border-radius:0px 0px 5px 5px;
   background-color:#ffcc99;
 }
-//----------------------------------------------------------------------------------------------------------------------------------------
-
-/*
-.style-1 {//一般辞典
-
-  $base:#f7f3e8;
-  $main: #caafaf;
-  $accent:#bf4a4a;
-  $sub: #e0e0e0;
-  $text: #121212;
-
-  @font-face{
-    font-family: 'Noto Sans JP', sans-serif;
-
-    font-weight: normal;
-    font-style: normal;
-  }
-
-  a {
-    text-decoration:none;
-    color:$text;
-    a:hover {
-      text-decoration: none;
-    }
-  }
-
- // heading
-
- .icon_button {
-   z-index: 0;
-   cursor: pointer;
-   display: inline-block;
-   width:40px;
-   height:40px;
-   margin-top:5px;
-   padding-top:10px;
-   border-radius: 20px;
-   font-weight:normal;
-   align-items: center;
-   background-color:$accent;
-   text-align:center;
-  p {
-    font-size: 1.2em;
-    display: inline-block;
-  }
- }
-
- .icon_button-ellipsis {
-   cursor: pointer;
-   display: inline-block;
-   width:40px;
-   height:20px;
-   margin-top:5px;
-   //padding-top:10px;
-   border-radius: 20px;
-   font-weight:normal;
-   align-items: center;
-   background-color:$accent;
-   text-align:center;
-  p {
-    font-size: 1.2em;
-    display: inline-block;
-  }
- }
-
- .head-bar {
-   display:none;
-   z-index: 3;
-   text-align: center;
-   width:100%;
-   height:10px;
-   background-color:$main;
- }
-
- .body-bar {
-   z-index:0;
-   position:absolute;
-   top:0px;
-   text-align: center;
-   width:20px;
-   height:100%;
-   background-color:#ffffff;
- }
-
- .main-table {
-   z-index: 2;
-
-  background-color: #ffffff;//$base;
-  background-image: $main;
-
-  display: flex;
-  width: 100%;
-  height:100%;
-  border-radius: 0px 0px 20px 20px;
-  flex-wrap:nowrap;
-}
-
-.heading {
-  display:flex;
-  width:400px;
-
-  flex-flow: column nowrap;
-  text-align:left;
-  padding:20px 10px 0px 10px;
-  p {
-
-    color:$text;
-    font-family: 'Noto Sans JP', sans-serif;
-  }
-}
-
-.dictionary-top-name {
-  position: relative;
-  border-bottom:solid 5px $main;
-  width:350px;
-
-  display:flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 0px;
-  i {
-    color:$accent;
-    padding-right:5px;
-  }
-  h2 {
-    color:$text;
-    font-family: 'Noto Sans JP', sans-serif;
-    white-space: nowrap;
-    font-weight:bold;
-    padding:5px;
-}
-  h5{
-    position: absolute;
-    top:0%;
-    left:0%;
-    display:inline-block;
-    padding:4px;
-  }
-  h6{
-    position: absolute;
-    bottom:0%;
-    left:0%;
-    display:inline-block;
-    padding:4px;
-  }
-
-  .medium {
-    color:$accent;
-  }
-}
-
-.content-ziplock {
-
-  border-bottom:solid 5px $main;
-}
-
-.show_heading {
-.heading-h1 {
-  //border-bottom: solid 5px $main;
-  display:flex;
-}
-  h1 {
-  flex-wrap:nowrap;
-  color:$text;
-  font-weight:bold;
-  font-family: 'Noto Sans JP', sans-serif;
-  font-size: 3em;
-  letter-spacing: -2px;
-  white-space: nowrap;
-  text-align: left;
-  padding:5px 40px 5px 0px;
-  i {
-    color:$accent;
-    padding-right:5px;
-  }
-  }
-  h2 {
-  flex-wrap:nowrap;
-  color:$text;
-  font-weight:bold;
-  font-family: 'Noto Sans JP', sans-serif;
-  font-size: 2em;
-  letter-spacing: -1px;
-  text-align: left;
-  padding:5px 40px 5px 0px;
-  }
-}
-
-
-
-.child_content_1 {
-  display:flex;
-  flex-direction: column;
-  font-family: 'Noto Sans JP', sans-serif;
-  background-color:$main;
-  color:#121212;
-  text-align: left;
-  padding:30px;
- p {
-  font-weight:normal;
-  }
-  .CodeRay
-  {
-    .code {
-      border: 0;
-      pre{
-        border: 0;
-        border-radius: 0;
-      }
-    }
-  }
-}
-.child_content_2 {
-  display:flex;
-  flex-direction: column;
-  margin-left:0px;
-  font-family: 'Noto Sans JP', sans-serif;
-  background-color:$sub;
-  text-align: left;
-  padding:30px;
-
-
- p {
-   font-family: 'Noto Sans JP', sans-serif;
-   font-weight:normal;
-
-  }
-}
-
-}//一般辞典  */
-//----------------------------------------------------------------------------------------------------------------------------------------
-//.style-2 {//コンピュータ辞典
 
   $base:rgba(255,255,255,1);
   $main: #dddddd;
@@ -462,15 +226,15 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #eeeeee;
     flex-flow: column nowrap;
     text-align:left;
-    border-radius:20px;
+
     p {
-      //padding-top:5px;
+
       font-family: 'Hack','Osaka-Mono';
     }
   }
 
   .dictionary-top-name {
-    position: relative;
+
 
     background-color: $sub;
     width:350px;
@@ -488,7 +252,7 @@ h1, h2, h3, h4, h5, h6 {
       font-family: 'Hack','Osaka-Mono';
       white-space: nowrap;
       font-weight:bold;
-//      border-bottom: 5px solid $main;
+
       padding:10px;
 
 
@@ -522,7 +286,7 @@ h1, h2, h3, h4, h5, h6 {
 
   .show_heading {
   .heading-h1 {
-    //border-bottom: solid 5px $main;
+
     display:flex;
   }
     h1 {
@@ -533,7 +297,7 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: -2px;
     white-space: nowrap;
     text-align: left;
-    padding:5px 40px 5px 5px;
+
     i {
       color:$accent;
       padding-right:5px;
@@ -546,8 +310,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 2em;
     letter-spacing: -1px;
     text-align: left;
-    padding:5px 40px 5px 0px;
-    //border-bottom: solid 5px $main;
+
     display:inline-block;
     }
   }
@@ -560,11 +323,10 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Hack', 'Osaka-Mono';
     text-align: left;
     padding:30px;
-  //  background-color: $base;
+
     background-color: #ffffff;
     color:$sub;
-    //border-left: 5px solid $main;
-    //border-bottom: 5px solid $main;
+
    p {
     font-weight:normal;
     }
@@ -584,11 +346,11 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     margin-left:0px;
     color:$sub;
-//    background-color: #eeeeee;
+
     background-color:#e5e5e5;
     text-align: left;
     padding:30px;
-    //border-left: 5px solid $main;
+
 
 
    p {
@@ -607,9 +369,6 @@ h1, h2, h3, h4, h5, h6 {
       }
     }
   }
-//}//コンピュータ辞典
-//----------------------------------------------------------------------------------------------------------------------------------------
-
 
 
 //icon-hanger
@@ -666,27 +425,25 @@ h1, h2, h3, h4, h5, h6 {
 
 .dictionary-top {
   z-index: 0;
-  position: relative;
+
   margin:0;
   padding: 0;
   display:flex;
   flex-direction: row;
-  top: 0;
-  left: 0;
 
   background-color: #fff;
 
-  //border:1px solid yellow;
+
 }
 
 .search-form {
-  display: inline-block;
+  display: none;//inline-block;
   position:absolute;
   text-align: center;
   z-index:0;
   padding: 4px;
-  width:120px;
-  height:57px;
+  //width:120px;
+  //height:57px;
   border-radius: 0 0 15px 15px ;
   background-color: #b0c4de;
 
@@ -702,12 +459,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .menu {
-  display: inline-block;
-  position:absolute;
+  display: none;
   all: initial;
   z-index:0;
-  width:150px;
-  height:200px;
+
   flex-direction: column;
   font-family: "M PLUS Rounded 1c";
 
@@ -719,7 +474,7 @@ h1, h2, h3, h4, h5, h6 {
   display:block;
   background-color: #eee;
   width:150px;
-  height:60px;
+//  height:60px;
   border-radius: 0 0 10px 0px;
 
   p {
@@ -764,7 +519,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   top:0px;
   left:0px;
-  //background-color: #ddd;
+
   h5 {
     display:none;
     position:relative;
@@ -774,13 +529,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .dictionary-single {
+  display:inline-block;
+margin:1px;
 
-  position:absolute;
-  top:30px;
-  left:0px;
-  width:150px;
-  height:30px;
-  padding:0px 10px 0px 10px;
+  padding: 5px 20px;
+  border-radius: 5px;
 }
 
 .single-style-1 {
@@ -822,11 +575,11 @@ input {
 
 
 　outline: none;
- //border-radius:5px;
+
  width:500px;
  font-size:20px;
  border: 0px ;
- //border-color:rgb(222,222,222);
+
  background:#eeeeee;
 }
 
@@ -884,7 +637,7 @@ input {
   flex-direction: column;
   justify-content: center;
   text-align: left;
-  // p,textarea  {all:initial;}
+
 
 
 }
@@ -993,7 +746,6 @@ input {
     h1 {
       letter-spacing: 5px;
       color:white;
-      //opacity:0.5;
       position: absolute;
       font-family: "Nico Moji";
       transform: translate(-50%,-50%);
@@ -1005,9 +757,7 @@ input {
     h2 {
       letter-spacing: 4px;
       color:white;
-      //opacity:0.5;
       position: absolute;
-      //font-family: "Nico Moji";
       transform: translate(-50%,-50%);
       left: 50%;
       top: 23%;

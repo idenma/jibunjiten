@@ -1,7 +1,7 @@
 $(function(){
 
 
-  $('.dictionary-top').offset({top: 0,left: 0});
+  //$('.dictionary-top').offset({top: 0,left: 0});
 
 
 //タブをブラウザ幅に合わせて動かす考え方
@@ -36,10 +36,7 @@ $(function(){
 var $menu = $('.menu');
 var menuClick = false;
 
-$menu.offset({
-  top: -40,
-  left:0
- });
+/*
 
  $menu.find('p').click(function(){
    if (menuClick == false) {
@@ -55,7 +52,7 @@ $menu.offset({
      menuClick = false
    }
   });
-
+*/
 
 //　ブラウザリサイズに影響するもの
 $(window).on('load resize', function() {
@@ -66,6 +63,8 @@ $(window).on('load resize', function() {
 
 
 //　検索フィールド
+
+/*
   $searchForm.offset({
     top: -30,
     left:searchFormleft
@@ -87,34 +86,27 @@ $(window).on('load resize', function() {
       searchFormClick = false
     }
    });
-
+*/
 
 //
    //  タブを並べる
     var rowTag = 0;//タグの列初期化
     var tag = $('.hidden').find('h4').text();//@Dictionaryを読み込む：選択している辞書
     var  choiseTag = 0;//選択しているタグ（辞書）用変数:初期化
-    var tabNumber = $('.dictionary-single').length;//タブの数を数える
-    dictionarySingleTop = $('.dictionary-single').offset().top;//タブの縦位置を取得
-    var dictionarySingleLeft = $('.dictionary-single').offset().left;//タブの横位置を取得
+  var tabNumber = $('.dictionary-single').length + 1;//タブの数を数える(+1はnew)
     var choiseTagDepth = new Array(tabNumber);//タブの数だけ
     var tagStyle = new Array(tabNumber);//タグのスタイル取得用変数
 
-
-//  if (windowWidth < dictionarySingleLeft + (tabNumber * 155)) {//タブに行を作るためのif文
-//　/タブ数
-  //}
-//タブに行を作るためのfor文
     for (var i = 0;i < tabNumber; i++) {//タブを一つずつ並べる作業
+
      var lineUpTag = $('.dictionary-single').eq(i).find('h6').text();//
       tagStyle[i] = $('.dictionary-single').eq(i).find('h5').text();//タグのスタイル取得用変数
+//       tagWidth[i] = $('.dictionary-single').eq(i).width();
      if ( lineUpTag == tag) {//タグが選ばれたタグなら（選択中の辞書なら）
          //choiseTag += 10;//タグの位置　+10下に　（タグが押し込まれてるように表示）
        }else {//選択されてないタグは
         // choiseTag = 0;//タグの位置　デフォルト
        }
-       choiseTagDepth[i] = dictionarySingleTop + choiseTag;//
-      $('.dictionary-single').eq(i).offset({top: choiseTagDepth[i],left: dictionarySingleLeft + (i * 155)});//タグを並べている確信のコード
 
      if (tagStyle[i] == "1"){//タグのスタイルが１だった場合
          $('.dictionary-single').eq(i).css('background-color','#dddde4');//
@@ -128,31 +120,24 @@ $(window).on('load resize', function() {
 //タブに行を作るためのfor文終わり
 //}//タブに行を作るためのif文終わり
 
-       $('.head-bar').offset({top: dictionarySingleTop + 30,left: 0});//ここもタブ行ができれば変わる
+
 
        //  タブを飛び上がらせる
          $('.dictionary-single').hover(
            function(){
-
-             $(this).css("border","solid 1px black");
-
-
-         //$(this).animate({
-        //  top:"20px",
-        //  height:"40px"
-        //  },100);
+             $(this).css("background-color","red");
          },
            function(){
+            // if (tagStyle[i] == "1"){//タグのスタイルが１だった場合
+            //     $(this).css('background-color','#dddde4');//
+            //   } else
+            //   if (tagStyle[i] == "0"){//タグのスタイルが０だった場合
+            //     $(this).css('background-color','#caafaf');//
+            //   } else {
+            //     $(this).css('background-color','#b0c4de');//
+            //   }
 
-             $(this).css("border","solid 0px");
-
-          //   var dictionarySingleEq = $('.dictionary-single').index($(this));
-          //   var choiseTagHeight = choiseTagDepth[dictionarySingleEq];
-          //   $(this).animate({
-          //     top:choiseTagHeight,
-          //     height:"30px"
-          //     },100);
-
+             $(this).css("background-color","#dddddd");
            });
 
 
@@ -171,18 +156,11 @@ $(window).on('load resize', function() {
 
 var style = $('.display-hidden').find('p').text();
 
- /* if (style == 0){
-   $('.display-base').removeClass('style-2').addClass('style-1');
- } else {
-   $('.display-base ').removeClass('style-1').addClass('style-2');
- } */
 
  $('.display-base').addClass('base-style');
 
 
-$('.head-bar').offset({top:dictionarySingleTop + 50});
-$('.display-base').offset({top:dictionarySingleTop + 30});
-$('.main-table').offset({top:dictionarySingleTop + 60});
+
 
 
 
