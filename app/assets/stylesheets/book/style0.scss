@@ -55,7 +55,7 @@ hr {
    p {
   font-weight:bold;
   font-size: 1em;
-  line-height: 1.2em;
+  //line-height: 1.2em;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -63,7 +63,7 @@ hr {
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
-  line-height: 1;
+//  line-height: 1;
   font-family: sans-serif;
 }
 
@@ -100,13 +100,15 @@ h1, h2, h3, h4, h5, h6 {
  }
 
  .right-text {
+   margin: 0px;
    display:flex;
    flex-direction: column;
-   align-items:flex-end;
+   padding: 0px;
+   height:20px;
+   //
 
 	 p {
      display:flex;
-		 text-align:left;
      color:$main;
 	 }
  }
@@ -241,19 +243,20 @@ h1, h2, h3, h4, h5, h6 {
   .dictionary-top-name {
 
 
-    background-color: $sub;
+    //background-color: $base;
     width:350px;
     display:flex;
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
     margin:10px 0px 10px 0px;
+    border-bottom: solid 5px $main;
     i {
       color:$accent;
       padding-right:5px;
     }
     h2 {
-      color:white;
+      color:$sub;
       font-family: 'Hack','Osaka-Mono';
       white-space: nowrap;
       font-weight:bold;
@@ -291,7 +294,6 @@ h1, h2, h3, h4, h5, h6 {
 
   .show_heading {
   .heading-h1 {
-
     display:flex;
   }
     h1 {
@@ -299,7 +301,7 @@ h1, h2, h3, h4, h5, h6 {
     color:$sub;
     font-weight:bold;
     font-size: 3em;
-    letter-spacing: -2px;
+  //  letter-spacing: -2px;
     white-space: nowrap;
     text-align: left;
 
@@ -310,11 +312,13 @@ h1, h2, h3, h4, h5, h6 {
     }
     h2 {
     flex-wrap:nowrap;
+    margin: 0px;
     color:$sub;
     font-weight:bold;
     font-size: 2em;
-    letter-spacing: -1px;
+    //letter-spacing: -1px;
     text-align: left;
+    //
 
     display:inline-block;
     }

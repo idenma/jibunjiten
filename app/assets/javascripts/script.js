@@ -128,16 +128,7 @@ $(window).on('load resize', function() {
              $(this).find('h6').css("color","red");
          },
            function(){
-            // if (tagStyle[i] == "1"){//タグのスタイルが１だった場合
-            //     $(this).css('background-color','#dddde4');//
-            //   } else
-            //   if (tagStyle[i] == "0"){//タグのスタイルが０だった場合
-            //     $(this).css('background-color','#caafaf');//
-            //   } else {
-            //     $(this).css('background-color','#b0c4de');//
-            //   }
-
-                       $(this).find('h6').css("color","black");
+             $(this).find('h6').css("color","black");
            });
 
 

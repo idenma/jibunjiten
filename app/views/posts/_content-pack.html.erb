@@ -1,4 +1,6 @@
-
+<div class="right-text">
+  <p><%= l @post.updated_at %></p>
+</div>
 <div class="row-content">
   <%if @post.content_1.blank? %>
   <div class="air_content">
@@ -22,7 +24,5 @@
     <%= markdown(@post.content_2).html_safe %>
   </div>
   <% end %>
-  <div class="right-text">
-    <p><%= l @post.updated_at %></p>
-  </div>
+
 </div>

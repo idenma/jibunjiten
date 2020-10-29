@@ -10,7 +10,9 @@
     <% end%>
   </div>
 </div>
-
+<div class="right-text">
+  <p><%= l micropost.updated_at %></p>
+</div>
 <div class="row-content">
   <%if micropost.content_1.blank? %>
   <div class="air_content">
@@ -29,9 +31,7 @@
   </div>
   <% end %>
 
-  <div class="right-text">
-    <p><%= l micropost.updated_at %></p>
-  </div>
+
 </div>
 
 
