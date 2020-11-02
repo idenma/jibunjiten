@@ -1,6 +1,6 @@
 <div class="display-hidden">
-  <p><%= Dictionary.find(@Dictionary).style %></p>
-  <% if @posts.where(dictionary_id:@Dictionary).count == 1 %>
+  <p><%= Dictionary.find(@Dictionary.id).style %></p>
+  <% if @posts.where(dictionary_id:@Dictionary.id).count == 1 %>
   <% sureDelete = "この辞典の最後の記事ですが削除しますか？"%>
   <% else %>
   <% sureDelete = "削除しますか？" %>
@@ -16,11 +16,11 @@
   <div class="col-md-1 heading">
 
     <div class="dictionary-top-name"><!-- 見出し上・辞書名表示 -->
-      <%= link_to(dictionaries_edit_path(@Dictionary)) do %>
+      <%= link_to(dictionaries_edit_path(@Dictionary.id)) do %>
       <h5><i class="far fa-edit"></i></h5>
       <% end %>
-      <h2><span class="medium"><i class="fas fa-book-open"></i></span><%= Dictionary.find(@Dictionary).name %></h2>
-      <%= link_to("/dictionaries/#{@Dictionary}/",method: :delete,data: { confirm: "この辞典を削除しますか？" }) do %>
+      <h2><span class="medium"><i class="fas fa-book-open"></i></span><%= Dictionary.find(@Dictionary.id).name %></h2>
+      <%= link_to("/dictionaries/#{@Dictionary.id}/",method: :delete,data: { confirm: "この辞典を削除しますか？" }) do %>
       <h6><i class="fas fa-times-circle"></i></h6>
       <% end %>
     </div><!-- 辞書名表示終わり -->
@@ -30,28 +30,20 @@
 
 
     <%@posts.each do |post| %><!-- 見出し整列 -->
-    <p><%= link_to(post.heading.truncate(20),"/posts/#{@Dictionary}/#{post.id}") %></p>
+    <p><%= link_to(post.heading.truncate(20),"/posts/#{@Dictionary.id}/#{post.id}") %></p>
     <%end%><!-- 見出し整列終わり -->
-
-    <div class="edit-modal-open"><!-- 新規ページ -->
-      <div class="edit-modal">
-        <div class="edit-modal-bg modal-close">
-          <h1><i class="fas fa-times-circle"></i></h1>
-        </div>
-        <div class="edit-modal-content">
-          <%= render "/posts/new" %>
-        </div>
-      </div>
 
 
     <div class="icon_button">
+      <%= link_to("/posts/#{@Dictionary.id}/new",method: :get)do %>
       <div class="tooltip1">
         <p><i class="far fa-file-alt"> </i></p>
        <div class="description1">新規ページ</div>
      </div>
+     <% end %>
       </div>
 
-    </div><!-- 新規ページ終わり -->
+
 
 
 

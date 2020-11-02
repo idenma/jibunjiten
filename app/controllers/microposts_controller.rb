@@ -1,8 +1,8 @@
 class MicropostsController < ApplicationController
 
  def new
-   @Dictionary = params[:dictionary_id]
-   @post = params[:post_id]
+   @Dictionary = Dictionary.find(params[:dictionary_id])
+   @post = @Dictionary.posts.find(params[:post_id])
 
  end
 
@@ -22,11 +22,11 @@ class MicropostsController < ApplicationController
  end
 
  def destroy
-   @Dictionary = params[:dictionary_id]
+ @Dictionary = Dictionary.find(params[:dictionary_id])
     micropost = Micropost.find_by(id: params[:id])#paramsに入れてあるidから指定のpostを探す
     micropost.destroy#で消す
 
-    posts = Post.where(dictionary_id: @Dictionary).last
+    posts = Post.where(dictionary_id: @Dictionary.id).last
     redirect_to(posts_show_path(posts.dictionary_id, posts.id))
  end
 

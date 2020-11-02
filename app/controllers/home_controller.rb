@@ -43,7 +43,7 @@ class HomeController < ApplicationController
    end
 
    def post_read
-    @Dictionary = params[:dictionary_id]                                   #表示する辞書はparams内在の指定辞書
+     @Dictionary = Dictionary.find(params[:dictionary_id])                      #表示する辞書はparams内在の指定辞書
     @posts = Post.where(dictionary_id: @Dictionary).order("id ASC")
    end
 

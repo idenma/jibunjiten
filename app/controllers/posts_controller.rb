@@ -26,7 +26,7 @@ class PostsController < ApplicationController
   end
 
   def new
-    @Dictionary = params[:dictionary_id]
+     @Dictionary = Dictionary.find(params[:dictionary_id])
   end
 
   def create
@@ -37,14 +37,14 @@ class PostsController < ApplicationController
 
 
  def edit
-  @Dictionary = params[:dictionary_id]
+   @Dictionary = Dictionary.find(params[:dictionary_id])
   @post = Post.find_by(id:params[:id])
  end
 
 
 
   def update
-   @Dictionary = params[:dictionary_id]
+ @Dictionary = Dictionary.find(params[:dictionary_id])
    @post = Post.find_by(id: params[:id])
    @post.update(post_params)
    redirect_to(posts_show_path(params[:dictionary_id],params[:id]))
@@ -54,13 +54,13 @@ class PostsController < ApplicationController
 
 
   def destroy
-   @Dictionary = params[:dictionary_id]
+   @Dictionary = Dictionary.find(params[:dictionary_id])
    post = Post.find_by(id: params[:id])#paramsに入れてあるidから指定のpostを探す
    post.destroy#で消す
 
-   if Post.find_by(dictionary_id: @Dictionary) == nil           #Dictionaryがあるのにpostがない時は=>辞書を消すよ？
-     deadDictionaryName = Dictionary.find(@Dictionary).name     #一回消す辞書の名前を取っておく
-     Dictionary.find(@Dictionary).destroy                       #デストローイ
+   if Post.find_by(dictionary_id: @Dictionary.id) == nil           #Dictionaryがあるのにpostがない時は=>辞書を消すよ？
+     deadDictionaryName = Dictionary.find(@Dictionary.id).name     #一回消す辞書の名前を取っておく
+     Dictionary.find(@Dictionary.id).destroy                       #デストローイ
      flash[:success] = "#{deadDictionaryName}を削除しました。"    #flashで表示
      lastDictionary = User.find(current_user.id).dictionaries.last                 #ユーザーのもつ辞書の最後を代入
      if lastDictionary == nil
@@ -71,7 +71,7 @@ class PostsController < ApplicationController
      redirect_to(posts_show_path(posts.dictionary_id, posts.id))#ユーザーの持つ最後のpostに移動※ミスってる
    end
    else
-     posts = Post.where(dictionary_id: @Dictionary).last
+     posts = Post.where(dictionary_id: @Dictionary.id).last
      redirect_to(posts_show_path(params[:dictionary_id],posts.id))
     end
   end
@@ -84,8 +84,8 @@ class PostsController < ApplicationController
   end
 
   def post_read
-   @Dictionary = params[:dictionary_id]                                   #表示する辞書はparams内在の指定辞書
-   @posts = Post.where(dictionary_id: @Dictionary).order("id ASC")
+ @Dictionary = Dictionary.find(params[:dictionary_id])                             #表示する辞書はparams内在の指定辞書
+   @posts = Post.where(dictionary_id: @Dictionary.id).order("id ASC")
   end
 
   def dictionary_collect

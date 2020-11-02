@@ -1,17 +1,17 @@
 <% if @Dictionary == nil %>
-<% @Dictionary = @post.dictionary_id %>
+<% @Dictionary = Dictionary.find(params[:dictionary_id]) %>
 <% end%>
 <div class="form-base">
   <div class="form-heading">
-    <%=form_tag("/posts/#{@Dictionary}/#{@post.id}/",method: :patch) do %>
-    <h1><%= Dictionary.find(@Dictionary).name %></h1>
+    <%=form_tag("/posts/#{@Dictionary.id}/#{@post.id}/",method: :patch) do %>
+    <h1><%= Dictionary.find(@Dictionary.id).name %></h1>
     <p>見だし１</p>
     <p><input class="input" type="text" name="heading" value="<%= @post.heading%>"></p>
     <p>見だし２</p>
     <p><input class="input" type="text" name="subheading" value="<%= @post.subheading %>"></p>
   </div>
   <div class="form-contents">
-    <input type="hidden" name="Dictionary" value="<%="#{@Dictionary}" %>" >
+    <input type="hidden" name="Dictionary" value="<%="#{@Dictionary.id}" %>" >
     <input type="hidden" name="id" value="<%="#{@post.id}" %>" >
     <div class="form-textarea">
       <p>本文１</p>

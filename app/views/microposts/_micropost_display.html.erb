@@ -61,7 +61,7 @@
         <div class="form-base"><!--edit micropostをlayerで渡せないのでこれで保留-->
 
         <div class="form-heading">
-        <p><%=form_tag("/microposts/#{@Dictionary}/#{@post.id}/#{micropost.id}/",method: :patch) do %></p>
+        <p><%=form_tag("/microposts/#{@Dictionary.id}/#{@post.id}/#{micropost.id}/",method: :patch) do %></p>
 
         <h1><%= @post.heading %></h1>
 
@@ -71,7 +71,7 @@
         </div>
 
         <div class="form-contents">
-        <input type="hidden" name="dictionary_id" value="<%="#{@Dictionary}" %>" >
+        <input type="hidden" name="dictionary_id" value="<%="#{@Dictionary.id}" %>" >
         <input type="hidden" name="post_id" value="<%="#{@post.id}" %>" >
         <input type="hidden" name="id" value="<%="#{micropost.id}" %>" >
 
@@ -117,7 +117,7 @@
 
 
   <div class="icon_button"><!--delete-->
-    <%= link_to("/microposts/#{@Dictionary}/#{@post.id}/#{micropost.id}/",method: :delete,data: { confirm: "削除しますか？" })do %>
+    <%= link_to("/microposts/#{@Dictionary.id}/#{@post.id}/#{micropost.id}/",method: :delete,data: { confirm: "削除しますか？" })do %>
     <div class="tooltip1">
       <p><i class="far fa-trash-alt"> </i></p>
      <div class="description1">削除</div>

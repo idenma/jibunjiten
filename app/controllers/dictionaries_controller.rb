@@ -4,12 +4,12 @@ class DictionariesController < ApplicationController
       if params[:dictionary_id] == nil && params[:id] == nil
         params[:dictionary_id] = Dictionary.last.id
         params[:id] = Post.last.id
-        @Dictionary = params[:dictionary_id]
+       @Dictionary = Dictionary.find(params[:dictionary_id])
         @posts = Post.where(dictionary_id: @Dictionary)
         @post = Post.where(dictionary_id: @Dictionary).last
         @user = User.find(params[:id])
       else
-        @Dictionary = params[:dictionary_id]
+       @Dictionary = Dictionary.find(params[:dictionary_id])
         @posts = Post.where(dictionary_id: @Dictionary)
 
         @post = Post.find_by(id:params[:id])

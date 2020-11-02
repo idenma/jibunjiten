@@ -1,7 +1,7 @@
 <div class="form-base">
-
+<%= @Dictionary.id %>
 <div class="form-heading">
-<p><%=form_tag("/microposts/#{@Dictionary}/#{@post.id}/create",method: :post) do %></p>
+<%=form_tag("/microposts/#{@Dictionary.id}/#{@post.id}/create",method: :post) do %>
 
 <h1><%= @post.heading %></h1>
 
@@ -11,7 +11,7 @@
 </div>
 
 <div class="form-contents">
-<input type="hidden" name="dictionary_id" value="<%="#{@Dictionary}" %>" >
+<input type="hidden" name="dictionary_id" value="<%="#{@Dictionary.id}" %>" >
 <input type="hidden" name="post_id" value="<%="#{@post.id}" %>" >
 
 <div class="form-textarea">
