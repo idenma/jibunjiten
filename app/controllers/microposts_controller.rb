@@ -11,6 +11,11 @@ class MicropostsController < ApplicationController
    redirect_to(posts_show_path(params[:dictionary_id],params[:post_id]))
  end
 
+ def edit
+   @Dictionary = Dictionary.find(params[:dictionary_id])
+   @post = @Dictionary.posts.find(params[:post_id])
+      @micropost = Micropost.find_by(id: params[:id])
+ end
 
 
  def update

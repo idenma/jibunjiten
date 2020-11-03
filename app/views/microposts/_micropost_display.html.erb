@@ -49,71 +49,17 @@
 <div class="icon-hanger-open">
 <div class="row-content"><!--Adjustment　icon-->
 
-  <div class="edit-modal-open"><!--update-->
-    <div class="edit-modal">
-      <div class="edit-modal-bg modal-close">
-        <h1><i class="fas fa-times-circle"></i></h1>
-
-      </div>
-      <div class="edit-modal-content">
-
-
-        <div class="form-base"><!--edit micropostをlayerで渡せないのでこれで保留-->
-
-        <div class="form-heading">
-        <p><%=form_tag("/microposts/#{@Dictionary.id}/#{@post.id}/#{micropost.id}/",method: :patch) do %></p>
-
-        <h1><%= @post.heading %></h1>
-
-        <p>見だし２</p>
-        <p><input class="input" type="text" name="subheading" value="<%= micropost.subheading %>" ></p>
-
-        </div>
-
-        <div class="form-contents">
-        <input type="hidden" name="dictionary_id" value="<%="#{@Dictionary.id}" %>" >
-        <input type="hidden" name="post_id" value="<%="#{@post.id}" %>" >
-        <input type="hidden" name="id" value="<%="#{micropost.id}" %>" >
-
-        <div class="form-textarea">
-        <p>本文１</p>
-        <textarea name="content_1"><%= micropost.content_1.gsub(/(\r\n|\r|\n)/, "\n")  %></textarea>
-        </div>
-
-        <div class="form-textarea">
-        <p>本文２</p>
-        <textarea name="content_2"><%= micropost.content_2.gsub(/(\r\n|\r|\n)/, "\n")  %></textarea>
-        </div>
-
-        </div>
-
-        <div class="form-submit">
-        <input type="submit" value="ok">
-        </div>
-
-        <% end %>
-
-        </div><!--edit-->
-
-
-
-
-
-
-
-
-        <!-- %= render "/microposts/edit" %-->
-      </div>
-    </div>
 
   <div class="icon_button">
+            <%= link_to("/microposts/#{@Dictionary.id}/#{@post.id}/#{micropost.id}",method: :get )do %>
     <div class="tooltip1">
       <p><i class="far fa-edit"> </i></p>
      <div class="description1">更新 </div>
    </div>
+       <% end %>
     </div>
 
-  </div><!--update-->
+
 
 
   <div class="icon_button"><!--delete-->
@@ -127,24 +73,17 @@
 
 
 
-  <div class="edit-modal-open"><!--add to　micropost-->
-    <div class="edit-modal">
-      <div class="edit-modal-bg modal-close">
-        <h1><i class="fas fa-times-circle"></i></h1>
 
-      </div>
-      <div class="edit-modal-content">
-        <%= render "/microposts/new" %>
-      </div>
-    </div>
 
   <div class="icon_button">
+        <%= link_to("/microposts/#{@Dictionary.id}/#{@post.id}/new",method: :get )do %>
     <div class="tooltip1">
       <p><i class="fas fa-arrow-down"> </i></p>
      <div class="description1">テキスト追加</div>
    </div>
+   <% end %>
     </div>
-  </div><!--add to　micropost-->
+
 </div><!--Adjustment　icon-->
 </div><!--icon-hanger-open-->
 </div><!--icon-button-->
