@@ -30,7 +30,7 @@
 
 
     <%@posts.each do |post| %><!-- 見出し整列 -->
-    <p><%= link_to(post.heading.truncate(20),"/posts/#{@Dictionary.id}/#{post.id}") %> <%= link_to("*","/posts/#{@Dictionary.id}/#{post.id}",method: :delete,data: { confirm: "このページを削除しますか？" }) %></p>
+    <p><%= link_to("*","/posts/#{@Dictionary.id}/#{post.id}",method: :delete,data: { confirm: "このページを削除しますか？" }) %> <%= link_to(post.heading.truncate(20),"/posts/#{@Dictionary.id}/#{post.id}") %></p>
     <%end%><!-- 見出し整列終わり -->
 
 
