@@ -29,6 +29,9 @@ class HomeController < ApplicationController
     @microposts =  Micropost.where(post_id: @post.id)
   end
 
+  def console
+  end
+
 
 
 
