@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get "/",                         to: 'home#index'
   root to: "home#index",            as: 'home'
   get 'home/:dictionary_id/',     to: 'home#dictionaryshow'
-  get '/console',                to: 'home#console'
+
 
 
   #search
