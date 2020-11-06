@@ -49,6 +49,24 @@
 <div class="icon-hanger-open">
 <div class="row-content"><!--Adjustment　icon-->
 
+  <div class="icon_button">
+            <%# %>
+    <div class="tooltip1">
+      <p><i class="far fa-angle-up"> </i></p>
+     <div class="description1">1つ上に</div>
+   </div>
+       <%# end %>
+    </div>
+
+    <div class="icon_button">
+              <%# %>
+      <div class="tooltip1">
+        <p><i class="far fa-angle-down"> </i></p>
+       <div class="description1">1つ下に</div>
+     </div>
+         <%# end %>
+      </div>
+
 
   <div class="icon_button">
             <%= link_to("/microposts/#{@Dictionary.id}/#{@post.id}/#{micropost.id}",method: :get )do %>
