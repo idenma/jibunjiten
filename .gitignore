@@ -29,3 +29,9 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+#uru(windows ruby version)
+uru
+uru_rt.exe
+uru.bat
+uru.ps1

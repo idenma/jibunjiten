@@ -125,10 +125,10 @@ $(window).on('load resize', function() {
        //  タブを飛び上がらせる
          $('.dictionary-single').hover(
            function(){
-             $(this).find('h6').css("color","red");
+             $(this).find('h6').css("color","white");
          },
            function(){
-             $(this).find('h6').css("color","black");
+             $(this).find('h6').css("color","#4b5366");
            });
 
 

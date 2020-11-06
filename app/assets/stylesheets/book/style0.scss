@@ -1,23 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-/*
- //z-indexについて
- .display-base: 0;
- .main-table: 2;
- .dictionary-top: 0;
- .menu:0;
- .flash: 2;
- .head-bar: 3;
- .body-bar:0;
-
-.edit-modal-open:1;
-edit-modal-bg:4;
- .edit-modal:0;
- .edit-modal-content: 6;
- .icon_button: 0;
- .icon-hanger: 0;
- */
 
 
  $base:rgba(255,255,255,1);
@@ -45,7 +28,7 @@ edit-modal-bg:4;
 
 
 a {
-  color:black;
+  color:$sub;
 }
 
 hr {
@@ -402,18 +385,13 @@ h1, h2, h3, h4, h5, h6 {
 
   h6 {
     font-size: 12px;
-    color:black;
+    color:$sub;
   }
   h5 {
     font-size: 10px;
 
   }
-  .Xswitch-on {
-    display: inline-block;
-  }
-  .Xswitch-off {
-    display: none;
-  }
+
 }
 
 
@@ -536,7 +514,7 @@ h1, h2, h3, h4, h5, h6 {
 margin:1px;
 
   padding: 5px 20px;
-  border-radius: 5px;
+  border-radius: 5px 5px 0px 0px;
 }
 
 .single-style-1 {
@@ -547,23 +525,7 @@ background-color:#c7dc68;
 background-color:#dddde4;
 }
 
-.dictionary-single:hover {
 
-}
-
-.single-hover-style-1 {
-  top: -10px;
-  // アニメーション設定
-  transition: all 0.1s;
-box-shadow: 0px -7px #c7dc68;
-}
-
-.single-hover-style-2 {
-  top: -10px;
-  // アニメーション設定
-  transition: all 0.1s;
-box-shadow: 0px -7px #dddde4;
-}
 
 .title {
   background-color:#dddde4;
