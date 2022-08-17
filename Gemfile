@@ -6,7 +6,7 @@ ruby '2.6.10'
 gem 'devise'
 
 #マークダウンするためのgem
-gem 'redcarpet', '~> 2.3.0'
+gem 'redcarpet', '~> 3.5.1'
 gem 'coderay'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
