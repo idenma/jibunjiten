@@ -94,11 +94,11 @@ GEM
     duktape (2.6.0.0)
     erubi (1.11.0)
     execjs (2.8.1)
-    factory_girl (4.9.0)
-      activesupport (>= 3.0.0)
-    factory_girl_rails (4.9.0)
-      factory_girl (~> 4.9.0)
-      railties (>= 3.0.0)
+    factory_bot (6.2.1)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -167,7 +167,7 @@ GEM
     rb-fsevent (0.11.1)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    redcarpet (2.3.0)
+    redcarpet (3.5.1)
     regexp_parser (2.5.0)
     responders (3.0.1)
       actionpack (>= 5.0)
@@ -241,7 +241,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  actionview (>= 5.2.4.4)
+  actionview (>= 5.2.7.1)
   bootsnap (>= 1.1.0)
   bootstrap-sass (= 3.4.1)
   byebug
@@ -253,7 +253,7 @@ DEPENDENCIES
   devise-i18n
   devise-i18n-views
   duktape
-  factory_girl_rails
+  factory_bot_rails
   hirb
   hirb-unicode
   jbuilder (~> 2.5)
@@ -261,7 +261,7 @@ DEPENDENCIES
   pg
   puma (= 4.3.12)
   rails (~> 5.2.5)
-  redcarpet (~> 2.3.0)
+  redcarpet (~> 3.5.1)
   rspec-rails (~> 3.6)
   sass-rails (~> 5.0)
   selenium-webdriver
