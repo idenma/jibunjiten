@@ -23,7 +23,7 @@ gem 'devise-i18n-views'   #上のgemを通す際必要
 
 gem 'bootstrap-sass', '3.4.1'
 
-gem "actionview", ">= 5.2.4.4"
+gem "actionview", ">= 5.2.7.1"
 
 gem 'puma', '4.3.12'
 # Use SCSS for stylesheets
@@ -58,7 +58,7 @@ group :development, :test do
   # Use Puma as the app server
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.6' #RSpecのgem
-  gem 'factory_girl_rails' #Rspecのテストデータ作製に便利
+  gem 'factory_bot_rails' #Rspecのテストデータ作製に便利
 end
 
 group :development do
