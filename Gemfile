@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.6'
+ruby '2.6.10'
 
 gem 'devise'
 
@@ -10,7 +10,7 @@ gem 'redcarpet', '~> 2.3.0'
 gem 'coderay'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.3'
+gem 'rails', '~> 5.2.5'
 # Use sqlite3 as the database for Active Record
 
 gem 'jquery-rails'
@@ -54,7 +54,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'sqlite3'#, '~> 1.3.6'
+  gem 'sqlite3', '~> 1.3.6'
   # Use Puma as the app server
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.6' #RSpecのgem

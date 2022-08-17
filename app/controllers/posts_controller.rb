@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
 
+
   def search
     if current_user
       p = current_user.id
@@ -96,7 +97,7 @@ class PostsController < ApplicationController
     if params[:id] == nil#このpostにmicropostが存在するなら
        @microposts = false
     else
-      @microposts = Micropost.where(post_id: @post.id)
+      @microposts = Micropost.where(post_id: @post.id).order(created_at: :asc)
     end
   end
 
